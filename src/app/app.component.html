@@ -16,29 +16,36 @@
       </mat-toolbar>
        
   <!-- cards -->
-     
-      <mat-card id="totalDistance">
+  <mat-grid-list cols="2" rowHeight="3:1">
+    <mat-grid-tile> 
+        <mat-card id="totalDistance">
         <mat-card-header>Total Distance</mat-card-header>
         <mat-card-content>40000 km</mat-card-content>
       </mat-card>
-      
-      <mat-card id="maxSpeed">
-        <mat-card-header>Max Speed</mat-card-header>
-        <mat-card-content>116 km/h</mat-card-content>
-      </mat-card>
-  
-      <mat-card id="totalHours">
-        <mat-card-header>Total Hours</mat-card-header>
-        <mat-card-content>10h 40min</mat-card-content>
-      </mat-card>
-      
-      <mat-card id="totalConsumed">
-        <mat-card-header>Total Consumed</mat-card-header>
-        <mat-card-content>40000 L</mat-card-content>
-      </mat-card>
-  
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card id="maxSpeed">
+            <mat-card-header>Max Speed</mat-card-header>
+            <mat-card-content>116 km/h</mat-card-content>
+          </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+         <mat-card id="totalHours">
+    <mat-card-header>Total Hours</mat-card-header>
+    <mat-card-content>10h 40min</mat-card-content>
+  </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card id="totalConsumed">
+            <mat-card-header>Total Consumed</mat-card-header>
+            <mat-card-content><b>40000</b> L</mat-card-content>
+          </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+     
       <!-- table  -->
-      <h2>All Vehicles</h2>
+      <h1>All Vehicles</h1>
       <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- ID -->
         <ng-container matColumnDef="vehicleID">
