@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 export interface VehicleInformation {
   vehicleID: string;
@@ -22,13 +23,16 @@ const ELEMENT_DATA: VehicleInformation[] = [
 ];
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-main-page',
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.css']
 })
-export class AppComponent {
+
+
+export class MainPageComponent {
   title = 'material-demo';
   opened= '!opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
   dataSource = ELEMENT_DATA;
+
 }
