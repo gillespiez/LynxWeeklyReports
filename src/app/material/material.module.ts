@@ -6,6 +6,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatInputModule} from '@angular/material/input';
 
 const MaterialComponents= [
   MatButtonModule,
@@ -13,7 +14,8 @@ const MaterialComponents= [
   MatCardModule,
   MatToolbarModule,
   MatTableModule,
-  MatGridListModule
+  MatGridListModule,
+  MatInputModule,
 ]
 
 @NgModule({
