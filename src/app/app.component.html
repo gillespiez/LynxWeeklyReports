@@ -1,9 +1,14 @@
 <mat-sidenav-container>
     <!-- sidenav  -->
       <mat-sidenav #sidenav mode="side" [(opened)]="opened">Sidenav<br/>
-      Dash<br/>
-      Rentals<br/>
-      Demos<br/>
+        <mat-nav-list>
+
+          <a mat-list-item > Dashboard </a>
+          <a mat-list-item > Demo Vehicles </a>
+          <a mat-list-item> Rental Vehicles </a>
+          <!-- [routerLink]="'/demo-vehicles'" -->
+    
+        </mat-nav-list>
     </mat-sidenav>
   
     <mat-sidenav-content> 

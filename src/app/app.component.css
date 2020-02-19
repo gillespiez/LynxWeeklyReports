@@ -41,9 +41,12 @@ mat-card, #totalDist{
 }
 mat-card-title, #totalDist{
     margin-top: 50px;
+
     font-size: medium;
+  
 }
 mat-card-content, #totalDist{
+
     font-size: xx-large
 }
 
