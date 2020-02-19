@@ -12,11 +12,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { HttpClientModule } from "@angular/common/http";
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RentalsComponent } from './rentals/rentals.component'
-
-
-
-
+import { RentalsComponent } from './rentals/rentals.component';
+import { DemosComponent } from './demos/demos.component'
 
 @NgModule({
   imports: [
@@ -34,6 +31,7 @@ import { RentalsComponent } from './rentals/rentals.component'
     AppComponent,
     DashboardComponent,
     RentalsComponent,
+    DemosComponent,
 
   ],
   bootstrap: [AppComponent]

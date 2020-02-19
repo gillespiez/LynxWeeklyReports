@@ -25,11 +25,11 @@ const ELEMENT_DATA: VehicleInformation[] = [
 ];
 
 @Component({
-  selector: 'app-rentals',
-  templateUrl: './rentals.component.html',
-  styleUrls: ['./rentals.component.css']
+  selector: 'app-demos',
+  templateUrl: './demos.component.html',
+  styleUrls: ['./demos.component.css']
 })
-export class RentalsComponent  {
+export class DemosComponent {
   title = 'material-demo';
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
