@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+import { ActivatedRoute } from '@angular/router';
 
 export interface VehicleInformation {
   vehicleID: string;
@@ -25,16 +26,18 @@ const ELEMENT_DATA: VehicleInformation[] = [
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class AppComponent {
+export class DashboardComponent {
+  
   title = 'material-demo';
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
   dataSource = ELEMENT_DATA;
 
   constructor(
+    private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer){
     this.matIconRegistry.addSvgIcon(

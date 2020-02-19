@@ -11,8 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from "@angular/material/icon";
 import { HttpClientModule } from "@angular/common/http";
 
-// import { HomeComponent } from './home';
-// import { MainPageComponent } from './main-page/main-page.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RentalsComponent } from './rentals/rentals.component'
+
 
 
 
@@ -26,12 +27,14 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     MatIconModule,
     HttpClientModule,
+    RouterModule
   ],
   providers: [],
   declarations: [
     AppComponent,
-    // HomeComponent,
-    // MainPageComponent
+    DashboardComponent,
+    RentalsComponent,
+
   ],
   bootstrap: [AppComponent]
 })
