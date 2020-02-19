@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 
+import { MatIconModule } from "@angular/material/icon";
+import { HttpClientModule } from "@angular/common/http";
+
 // import { HomeComponent } from './home';
 // import { MainPageComponent } from './main-page/main-page.component';
 
@@ -21,6 +24,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    MatIconModule,
+    HttpClientModule,
   ],
   providers: [],
   declarations: [

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 
 export interface VehicleInformation {
   vehicleID: string;
@@ -31,4 +33,29 @@ export class AppComponent {
   opened= '!opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
   dataSource = ELEMENT_DATA;
+
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer){
+    this.matIconRegistry.addSvgIcon(
+      `distance`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/distance.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `consumed`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/consumed.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `speed`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/speed.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `time`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/time.svg",
+      )
+    );
+  }
 }

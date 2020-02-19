@@ -33,11 +33,12 @@
          
        
 <!-- cards -->
-  <mat-grid-list cols="2" rowHeight="3:1" >
+  <mat-grid-list cols="2" rowHeight="3:1" [gutterSize]="20">
    <mat-grid-tile>
      <mat-card id="totalDist">
        <mat-card-title>
         Distance
+        <mat-icon id="distanceIcon" svgIcon="distance"></mat-icon>
       </mat-card-title>
       <mat-card-content>
          40000km
@@ -47,7 +48,9 @@
     <mat-grid-tile>
       <mat-card id="maxSpeed">
         <mat-card-title>
-         Max Speed
+          Max. Speed
+          <mat-icon id="distanceIcon" svgIcon="speed"></mat-icon>
+       
        </mat-card-title>
        <mat-card-content>
           116km/h
@@ -57,7 +60,9 @@
     <mat-grid-tile>
       <mat-card id="totalHours">
         <mat-card-title>
-         Total Hours
+      Total Hours
+
+          <mat-icon id="distanceIcon" svgIcon="time"></mat-icon>
        </mat-card-title>
        <mat-card-content>
           10h 40min
@@ -68,6 +73,8 @@
        <mat-card id="totalCons">
          <mat-card-title>
           Total Consumed
+          <mat-icon id="distanceIcon" svgIcon="consumed"></mat-icon>
+         
         </mat-card-title>
         <mat-card-content>
            40000 L
