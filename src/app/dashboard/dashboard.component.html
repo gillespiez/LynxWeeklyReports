@@ -17,9 +17,9 @@
       <mat-toolbar>
         <button mat-button (click)="sidenav.toggle()">Toggle</button>
         <span>Babcock</span>
-        <span class="spacer"></span>
+        <span class="example-spacer"></span>
         <span float="right">Total vehicles</span>
-        <mat-icon svgIcon="totalCars"></mat-icon>
+        <!-- <mat-icon svgIcon="totalCars"></mat-icon> -->
       </mat-toolbar>
 
 <!-- search and filters -->
@@ -43,8 +43,8 @@
          
        
 <!-- cards -->
-  <mat-grid-list cols="2" rowHeight="3:1" [gutterSize]="20">
-   <mat-grid-tile>
+ 
+  
      <mat-card id="totalDist">
        <mat-card-title>
         Distance
@@ -54,8 +54,8 @@
          40000km
       </mat-card-content>
       </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
+    
+   
       <mat-card id="maxSpeed">
         <mat-card-title>
           Max. Speed
@@ -66,8 +66,8 @@
           116km/h
        </mat-card-content>
        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
+    
+   
       <mat-card id="totalHours">
         <mat-card-title>
       Total Hours
@@ -78,8 +78,8 @@
           10h 40min
        </mat-card-content>
        </mat-card>
-     </mat-grid-tile>
-     <mat-grid-tile>
+     
+    
        <mat-card id="totalCons">
          <mat-card-title>
           Total Consumed
@@ -90,8 +90,8 @@
            40000 L
         </mat-card-content>
         </mat-card>
-     </mat-grid-tile>
-  </mat-grid-list>
+     
+ 
 
      
 <!-- table  -->
