@@ -67,6 +67,16 @@
        </mat-card-content>
        </mat-card>
     
+       <mat-card id="totalCons">
+        <mat-card-title>
+         Total Consumed
+         <mat-icon id="distanceIcon" svgIcon="consumed"></mat-icon>
+        
+       </mat-card-title>
+       <mat-card-content>
+          40000 L
+       </mat-card-content>
+       </mat-card>
    
       <mat-card id="totalHours">
         <mat-card-title>
@@ -77,23 +87,8 @@
        <mat-card-content>
           10h 40min
        </mat-card-content>
-       </mat-card>
-     
-    
-       <mat-card id="totalCons">
-         <mat-card-title>
-          Total Consumed
-          <mat-icon id="distanceIcon" svgIcon="consumed"></mat-icon>
-         
-        </mat-card-title>
-        <mat-card-content>
-           40000 L
-        </mat-card-content>
-        </mat-card>
-     
- 
-
-     
+       </mat-card>  
+      
 <!-- table  -->
       <h1>All Vehicles</h1>
       <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
