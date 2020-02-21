@@ -79,5 +79,40 @@ export class DemosComponent {
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/filtertype.svg",
       )
     );
+    this.matIconRegistry.addSvgIcon(
+      `dashAct`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/dashAct.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `demoAct`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/demoAct.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `rentalAct`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/rentalAct.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `dash`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/dash.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `demos`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/demos.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `rentals`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/rentals.svg",
+      )
+    );
+    this.matIconRegistry.addSvgIcon(
+      `sidenav`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/menubutt.svg",
+      )
+    );
 }
 }
