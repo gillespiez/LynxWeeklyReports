@@ -134,8 +134,13 @@ mat-icon{
   mat-sidenav:not(.mat-drawer-opened) .home-button {
     display: none !important;
   }
-  mat-icon, #sidenav{
+#cardIcon{
     height: 100px;
     width: 100px;
     margin-left: 70%;
+}
+#sidenav{
+    height: 20px;
+    margin-left: -40px;
+    margin-right: -20px;
 }

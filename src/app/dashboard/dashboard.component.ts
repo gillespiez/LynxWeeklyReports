@@ -32,7 +32,8 @@ const ELEMENT_DATA: VehicleInformation[] = [
 export class DashboardComponent {
   
   title = 'material-demo';
-  opened= 'opened'
+  opened= 'opened';
+  isClosed="true";
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
   dataSource = ELEMENT_DATA;
 

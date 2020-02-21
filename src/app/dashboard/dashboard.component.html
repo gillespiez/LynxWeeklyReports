@@ -3,13 +3,38 @@
       <mat-sidenav #sidenav mode="side" >Sidenav<br/>
         <mat-nav-list>
 
-          <mat-icon svgIcon="time" id="sidenav" class="material-icons">time</mat-icon><a mat-list-item  [routerLink]="'/dashboard'"> Dashboard </a>
+          <a mat-list-item  [routerLink]="'/dashboard'" > <mat-icon svgIcon="time" id="sidenav" class="material-icons"></mat-icon> Dashboard </a>
           <a mat-list-item [routerLink]="'/demos'"> Demo Vehicles </a>
           <a mat-list-item [routerLink]="'/rentals'"> Rental Vehicles </a>
          
     
         </mat-nav-list>
     </mat-sidenav>
+    <!-- <mat-drawer-container class="example-container mat-typography" autosize>
+      <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+        <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="margin: 10px;">
+          <mat-icon aria-label="Menu">menu</mat-icon>
+        </button>
+    
+        <mat-nav-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>person</mat-icon>
+            <h4 mat-line *ngIf="isExpanded">Management A</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>assignment</mat-icon>
+            <h4 mat-line *ngIf="isExpanded">Management B</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>domain</mat-icon>
+            <h4 mat-line *ngIf="isExpanded">Management C</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>folder_shared</mat-icon>
+            <h4 mat-line *ngIf="isExpanded">Management X</h4>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-drawer> -->
   
     <mat-sidenav-content> 
 
@@ -48,7 +73,7 @@
      <mat-card id="totalDist">
        <mat-card-title>
         Distance
-        <mat-icon id="distanceIcon" svgIcon="distance"></mat-icon>
+        <mat-icon id="cardIcon" svgIcon="distance"></mat-icon>
       </mat-card-title>
       <mat-card-content>
          40000km
@@ -59,7 +84,7 @@
       <mat-card id="maxSpeed">
         <mat-card-title>
           Max. Speed
-          <mat-icon id="distanceIcon" svgIcon="speed"></mat-icon>
+          <mat-icon id="cardIcon" svgIcon="speed"></mat-icon>
        
        </mat-card-title>
        <mat-card-content>
@@ -70,7 +95,7 @@
        <mat-card id="totalCons">
         <mat-card-title>
          Total Consumed
-         <mat-icon id="distanceIcon" svgIcon="consumed"></mat-icon>
+         <mat-icon id="cardIcon" svgIcon="consumed"></mat-icon>
         
        </mat-card-title>
        <mat-card-content>
@@ -82,7 +107,7 @@
         <mat-card-title>
       Total Hours
 
-          <mat-icon id="distanceIcon" svgIcon="time"></mat-icon>
+          <mat-icon id="cardIcon" svgIcon="time"></mat-icon>
        </mat-card-title>
        <mat-card-content>
           10h 40min
