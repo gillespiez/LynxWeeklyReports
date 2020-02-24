@@ -10,6 +10,10 @@ export interface VehicleInformation {
   kml: number;
   odometer: number;
 }
+interface Type {
+  value: string;
+  viewValue: string;
+}
 
 const ELEMENT_DATA: VehicleInformation[] = [
   {vehicleID: "1", type: 'Demo', l100: 1.7, kml: 10, odometer: 12000},
@@ -34,7 +38,13 @@ export class DemosComponent {
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
   dataSource = ELEMENT_DATA;
-
+  types: Type[] = [
+    {value: 'all-0', viewValue: 'All'},
+    {value: 'demo-1', viewValue: 'Demo'},
+    {value: 'rental-2', viewValue: 'Rental'}
+  ];
+  maxDate = new Date();
+  minDate = new Date(2017, 1, 1);
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
