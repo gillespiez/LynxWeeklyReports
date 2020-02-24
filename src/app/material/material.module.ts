@@ -8,6 +8,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const MaterialComponents= [
   MatButtonModule,
@@ -18,6 +20,8 @@ const MaterialComponents= [
   MatGridListModule,
   MatInputModule,
   MatListModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ]
 
 @NgModule({
