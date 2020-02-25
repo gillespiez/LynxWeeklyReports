@@ -1,3 +1,4 @@
+
 <mat-sidenav-container>
     <!-- sidenav  -->
       <mat-sidenav #sidenav mode="side" >
@@ -123,13 +124,35 @@
   
 <!-- graphs  -->
 <div class="engineHoursGraph">
-
+    <canvas baseChart
+          
+    [datasets]="engineHoursData"
+    [labels]="engineHoursLabels"
+    [options]="engineHoursOptions"
+    [legend]="engineHoursLegend"
+    [chartType]="engineHoursType">
+</canvas>
 </div>
+
 <div class="maxSpeedGraph">
-    
+        <canvas baseChart
+              
+        [datasets]="maxSpeedData"
+        [labels]="maxSpeedLabels"
+        [options]="maxSpeedOptions"
+        [legend]="maxSpeedLegend"
+        [chartType]="maxSpeedType">
+    </canvas>
 </div>
 <div class="totalDistanceGraph">
-    
+    <canvas baseChart
+          
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
 </div>
   
     </mat-sidenav-content>

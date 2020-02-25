@@ -17,6 +17,8 @@ import { DemosComponent } from './demos/demos.component';
 import { PerVehicleComponent } from './per-vehicle/per-vehicle.component';
 import { TotalGraphsComponent } from './total-graphs/total-graphs.component'
 
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { TotalGraphsComponent } from './total-graphs/total-graphs.component'
     FormsModule,
     MatIconModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ChartsModule,
   ],
   providers: [],
   declarations: [
