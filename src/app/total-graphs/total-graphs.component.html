@@ -30,7 +30,7 @@
         <span>Babcock</span>
         <span class="example-spacer"></span>
         <span float="right">Total vehicles</span>
-        <!-- <mat-icon svgIcon="totalCars"></mat-icon> -->
+        
       </mat-toolbar>
   
   <!-- search and filters -->
@@ -74,20 +74,21 @@
     </mat-card>
          
 <!-- graphs  -->
+
 <div class="perCarGraph">
-    <!-- <canvas baseChart
-            
+    <canvas 
+        baseChart   
         [datasets]="perCarData"
         [labels]="perCarLabels"
         [options]="perCarOptions"
         [legend]="perCarLegend"
         [chartType]="perCarType">
-    </canvas> -->
+    </canvas>
 </div>
 
 <div class="perTypeGraph">
-        <canvas baseChart 
-              
+        <canvas 
+        baseChart       
         [datasets]="perTypeData"
         [labels]="perTypeLabels"
         [options]="perTypeOptions"
@@ -96,13 +97,13 @@
     </canvas>
 </div>
 <div class="perDayGraph">
-    <canvas baseChart
-          
-            [datasets]="perDayData"
-            [labels]="perDayLabels"
-            [options]="perDayOptions"
-            [legend]="perDayLegend"
-            [chartType]="perDayType">
+    <canvas 
+        baseChart
+        [datasets]="perDayData"
+        [labels]="perDayLabels"
+        [options]="perDayOptions"
+        [legend]="perDayLegend"
+        [chartType]="perDayType">
     </canvas>
 </div>
   

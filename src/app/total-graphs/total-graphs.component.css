@@ -108,8 +108,6 @@ mat-icon{
 .example-spacer {
     flex: 1 1 auto;
 }
-
-
 mat-sidenav:not(.mat-drawer-opened) {
     transform: translate3d(0, 0, 0) !important;
     visibility: visible !important;
@@ -144,6 +142,7 @@ mat-sidenav:not(.mat-drawer-opened) .home-button {
     margin-left: 10px;
     margin-left: 20px;
     display: inline-block;
+    overflow: auto;
 }
 .perTypeGraph{
     background-color: white;

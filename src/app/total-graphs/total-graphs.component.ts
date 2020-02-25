@@ -105,7 +105,7 @@ export class TotalGraphsComponent {
     );
   }
 
-  // charts
+  // per day
   public perDayOptions = {
     scaleShowVerticalLines: true,
     responsive: true,
@@ -162,7 +162,6 @@ export class TotalGraphsComponent {
   public perTypeData = [{
     backgroundColor: ['red','black'],
     data: [110, 125],
-    label: 'Max speed in km/h',
     fill: false
   }
   ];
