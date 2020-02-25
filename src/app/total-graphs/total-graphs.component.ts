@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute } from '@angular/router';
+import { WHITE_ON_BLACK_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 
 interface Type {
   value: string;
@@ -105,25 +106,7 @@ export class TotalGraphsComponent {
     );
   }
 
-  // per day
-  public perDayOptions = {
-    scaleShowVerticalLines: true,
-    responsive: true,
-    title: {
-      display: true,
-      text: 'Distance Per Day',
-      padding: 10,
-  }
-  };
-  public perDayLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
-  public perDayType = 'bar';
-  public perDayLegend = true;
-  public perDayData = [{
-    backgroundColor: 'red',
-    data: [1000, 520, 856, 852, 62, 125, 600],
-    label: 'Distance in km'
-  }
-  ];
+ 
 //  per car 
   public perCarOptions = {
     maintainAspectRatio : false,
@@ -131,17 +114,16 @@ export class TotalGraphsComponent {
     responsive: true,
     title: {
       display: true,
-      text: 'Engine Hours Per Day',
+      text: 'Engine Hours Per Car',
       padding: 10,
-    
   }
   };
-  public perCarLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
+  public perCarLabels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
   public perCarType = 'line';
-  public perCarLegend = true;
+  public perCarLegend = false;
   public perCarData = [{
-    backgroundColor: 'red',
-    data: [10, 16, 24, 2, 5, 20, 1],
+    backgroundColor: 'rgb(194,62,62)',
+    data: [10, 16, 24, 2, 5, 20, 1, 5, 20, 1],
     label: 'Engine hours',
     fill: false
   }
@@ -161,9 +143,29 @@ export class TotalGraphsComponent {
   public perTypeType = 'pie';
   public perTypeLegend = true;
   public perTypeData = [{
-    backgroundColor: ['red','black'],
+    backgroundColor: ['rgb(194,62,62)','black'],
     data: [110, 125],
     fill: false
+  }
+  ];
+
+   // per day
+   public perDayOptions = {
+    scaleShowVerticalLines: true,
+    responsive: true,
+    title: {
+      display: true,
+      text: 'Distance Per Day',
+      padding: 10,
+  }
+  };
+  public perDayLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
+  public perDayType = 'bar';
+  public perDayLegend = false;
+  public perDayData = [{
+    backgroundColor: 'rgb(194,62,62)',
+    data: [1000, 520, 856, 852, 62, 125, 600],
+    label: 'Distance in km'
   }
   ];
 }

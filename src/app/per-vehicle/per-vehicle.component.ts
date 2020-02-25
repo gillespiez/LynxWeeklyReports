@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute } from '@angular/router';
+import { R3TargetBinder } from '@angular/compiler';
 export interface VehicleInformation {
   vehicleID: string;
   type: string;
@@ -137,9 +138,9 @@ export class PerVehicleComponent  {
   };
   public barChartLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
   public barChartType = 'bar';
-  public barChartLegend = true;
+  public barChartLegend = false;
   public barChartData = [{
-    backgroundColor: 'red',
+    backgroundColor: 'rgb(194,62,62)',
     data: [1000, 520, 856, 852, 62, 125, 600],
     label: 'Distance in km'
   }
@@ -156,9 +157,9 @@ export class PerVehicleComponent  {
   };
   public engineHoursLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
   public engineHoursType = 'line';
-  public engineHoursLegend = true;
+  public engineHoursLegend = false;
   public engineHoursData = [{
-    backgroundColor: 'red',
+    backgroundColor: 'rgb(194,62,62)',
     data: [10, 16, 24, 2, 5, 20, 1],
     label: 'Engine hours',
     fill: false
@@ -177,9 +178,9 @@ export class PerVehicleComponent  {
   };
   public maxSpeedLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
   public maxSpeedType = 'line';
-  public maxSpeedLegend = true;
+  public maxSpeedLegend = false;
   public maxSpeedData = [{
-    backgroundColor: 'red',
+    backgroundColor: 'rgb(194,62,62)',
     data: [110, 125, 200, 2, 50, 80, 89],
     label: 'Max speed in km/h',
     fill: false
