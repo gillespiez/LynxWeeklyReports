@@ -13,7 +13,9 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RentalsComponent } from './rentals/rentals.component';
-import { DemosComponent } from './demos/demos.component'
+import { DemosComponent } from './demos/demos.component';
+import { PerVehicleComponent } from './per-vehicle/per-vehicle.component';
+import { TotalGraphsComponent } from './total-graphs/total-graphs.component'
 
 @NgModule({
   imports: [
@@ -32,6 +34,8 @@ import { DemosComponent } from './demos/demos.component'
     DashboardComponent,
     RentalsComponent,
     DemosComponent,
+    PerVehicleComponent,
+    TotalGraphsComponent,
 
   ],
   bootstrap: [AppComponent]
