@@ -55,7 +55,7 @@ mat-sidenav:not(.mat-drawer-opened) .home-button {
     width: 24px;
     margin-left: 20px;
 }
-.active-link, .material-icons{
-    background-color: blue;
+.active-link{
+    fill: #C23E3E;
 
     }
