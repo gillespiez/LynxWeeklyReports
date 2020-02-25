@@ -3,6 +3,11 @@ import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute } from '@angular/router';
 
+export interface Amount {
+  title: string,
+  total: number
+}
+
 export interface VehicleInformation {
   vehicleID: string;
   type: string;
@@ -11,6 +16,9 @@ export interface VehicleInformation {
   odometer: number;
 }
 
+const AMOUNT_OF_VEHICLES: Amount[] = [
+  {title: "Total Cars", total: 42},
+];
 const ELEMENT_DATA: VehicleInformation[] = [
   {vehicleID: "1", type: 'Demo', l100: 1.7, kml: 10, odometer: 12000},
   {vehicleID: "2", type: 'Demo', l100: 4.6, kml: 8, odometer: 12000},
@@ -34,7 +42,8 @@ export class AppComponent {
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
   dataSource = ELEMENT_DATA;
-
+  amount = AMOUNT_OF_VEHICLES;
+  
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,

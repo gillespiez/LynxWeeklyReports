@@ -21,7 +21,7 @@
             <span class="navigation-item-label">per car</span>
            </a>
            <a mat-list-item [routerLink]="'/totals'"  [routerLinkActive]="['active-link']"  >  
-            <span class="navigation-item-label">per car</span>
+            <span class="navigation-item-label">total graphs</span>
            </a>
          
         </mat-nav-list>
@@ -34,8 +34,10 @@
         <button mat-button (click)="sidenav.toggle()"><mat-icon svgIcon="sidenav" id="toggleNav"></mat-icon></button>
         <span>Babcock</span>
         <span class="example-spacer"></span>
-        <span float="right">Total vehicles</span>
-        <!-- <mat-icon svgIcon="totalCars"></mat-icon> -->
+        <span style="text-align: center;">
+          Total Cars<br/>
+          42
+        </span>       
       </mat-toolbar>
   
 <router-outlet></router-outlet> 

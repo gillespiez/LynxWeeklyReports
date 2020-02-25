@@ -24,7 +24,7 @@
       <mat-form-field class="filter-form" color="warn" style="margin-right: 24px">
         <mat-label  style="color:whitesmoke">Choose An End Date</mat-label>
           <input matInput  [matDatepicker]="myDatepicker2" [min]="minDate">
-          <mat-datepicker-toggle  style="color:whitesmoke" matSuffix [for]="myDatepicker2"></mat-datepicker-toggle>
+          <mat-datepicker-toggle  style="color:whitesmoke" color="warn" matSuffix [for]="myDatepicker2"></mat-datepicker-toggle>
           <mat-datepicker #myDatepicker2 color="warn"></mat-datepicker>
         </mat-form-field>
 
@@ -42,7 +42,7 @@
      
 <!-- cards -->
 
-
+<a [routerLink]="'/totals'"  [routerLinkActive]="['active-link']"  >  
    <mat-card id="totalDist">
      <mat-card-title>
       Distance
@@ -86,7 +86,7 @@
         <b>10</b>h <b>40</b>min
      </mat-card-content>
      </mat-card>  
-    
+  </a>
 <!-- table  -->
     <h1>All Rental Vehicles</h1>
     <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
