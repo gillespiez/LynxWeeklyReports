@@ -126,13 +126,14 @@ export class TotalGraphsComponent {
   ];
 //  per car 
   public perCarOptions = {
+    maintainAspectRatio : false,
     scaleShowVerticalLines: false,
     responsive: true,
     title: {
       display: true,
       text: 'Engine Hours Per Day',
       padding: 10,
-      maintainAspectRatio : false
+    
   }
   };
   public perCarLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
