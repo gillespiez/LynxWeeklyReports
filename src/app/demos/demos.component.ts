@@ -35,7 +35,7 @@ const ELEMENT_DATA: VehicleInformation[] = [
   styleUrls: ['./demos.component.css']
 })
 export class DemosComponent {
-  title = 'material-demo';
+  title = 'Weekly Report';
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
   dataSource = ELEMENT_DATA;

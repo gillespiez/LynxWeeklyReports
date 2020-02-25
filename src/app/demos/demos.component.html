@@ -16,7 +16,9 @@
           <mat-icon svgIcon="rentals" id="sidenavIcon" class="material-icons"></mat-icon>
           <span class="navigation-item-label">Rental Vehicles</span>
          </a>
-       
+         <a mat-list-item [routerLink]="'/percar'">  
+          <span class="navigation-item-label">per car</span>
+         </a>
   
       </mat-nav-list>
   </mat-sidenav>
@@ -86,8 +88,7 @@
     </mat-card-content>
     </mat-card>
   
- 
-    <mat-card id="maxSpeed">
+ <mat-card id="maxSpeed">
       <mat-card-title>
         Max. Speed
         <mat-icon id="cardIcon" svgIcon="speed"></mat-icon>
@@ -124,7 +125,7 @@
     <h1>All Demo Vehicles</h1>
     <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <!-- ID -->
-      <ng-container matColumnDef="vehicleID">
+     <ng-container matColumnDef="vehicleID">
         <mat-header-cell *matHeaderCellDef> Vehicle ID </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.vehicleID}} </mat-cell>
       </ng-container>

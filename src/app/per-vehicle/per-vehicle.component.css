@@ -1,0 +1,160 @@
+mat-toolbar {
+    width: 100%;
+    background-color: #2F2F2F;
+    color: white;
+    margin-left: -20px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+mat-sidenav-container {
+    height: 100%;
+}
+mat-sidenav {
+    padding: 16px;
+}
+mat-sidenav-content {
+    padding: 16px;
+    background-color: #2F2F2F;
+    color: white;
+    margin-left: 60px;
+}
+mat-sidenav {
+    background-color: white;
+    width: 200px;
+}
+
+ /* these */
+ 
+.cardsgohere {
+    background-color: blanchedalmond;
+    height: 50%;
+    width: 50%;
+    margin-left: 20px;
+    vertical-align: top;
+    display: inline-block;
+}
+mat-card, #totalDist{
+    height: 30%;
+    width: 40%;
+    background-color:black;
+    color: white;
+    display: inline-block;
+}
+mat-card-title, #totalDist{
+
+    font-size: medium;
+  
+}
+mat-card-content, #totalDist{
+    font-size: xx-large
+}
+mat-card, #maxSpeed{
+    height: 30%;
+    width: 40%;
+    background-color: white;
+    color: black;
+    display: inline-block;
+}
+mat-card-title, #maxSpeed{
+
+    font-size: medium;
+}
+mat-card, #totalHours{
+    height: 30%;
+    width: 40%;
+    background-color: white;
+    color: black;
+    display: inline-block;
+}
+mat-card-title, #totalHours{
+
+    font-size: medium;
+}
+mat-card, #totalCons{
+    height: 30%;
+    width: 40%;
+    background-color: black;
+    color: white;
+    display: inline-block;
+    
+}
+mat-card-title, #totalCons{
+
+    font-size: medium;
+}
+/* to here  */
+
+ mat-card, #search-bar{
+     width: 40%;
+     height: 40px;
+     margin-bottom: 20px;
+    background-color: white;
+    /* align-content: center; */
+}
+mat-card, #filters{
+    width: 50%;
+    height: 40px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: transparent;
+   
+    vertical-align: top;
+}
+mat-icon{
+    height: 100px;
+    width: 100px;
+    margin-left: 70%;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+mat-sidenav:not(.mat-drawer-opened) {
+    transform: translate3d(0, 0, 0) !important;
+    visibility: visible !important;
+    width: 88px !important;
+    overflow: hidden;
+}
+mat-sidenav:not(.mat-drawer-opened) .navigation-item-label {
+    display: none !important;
+}
+mat-sidenav:not(.mat-drawer-opened) .home-button {
+    display: none !important;
+}
+#cardIcon{
+    height: 100px;
+    width: 100px;
+    margin-left: 70%;
+}
+#sidenavIcon{
+    height: 18px;
+    margin-left: -40px;
+    margin-right: -20px;
+}
+#toggleNav {
+    width: 24px;
+    margin-left: 20px;
+}
+/* graphs */
+.engineHoursGraph{
+    background-color: blue;
+    height: 50%;
+    width: 46%;
+    margin-left: 20px;
+    display: inline-block;
+}
+.maxSpeedGraph{
+    background-color: blueviolet;
+    height: 50%;
+    width: 46%;
+    margin-left: 20px;
+    display: inline-block;
+}
+.totalDistanceGraph{
+    background-color: brown;
+    height: 50%;
+    width: 46%;
+    margin-left: 20px;
+    display: inline-block;
+}
