@@ -31,19 +31,28 @@ const ELEMENT_DATA: VehicleInformation[] = [
   {vehicleID: "9", type: 'Rental', l100: 18.9, kml: 5, odometer: 12000},
   {vehicleID: "10", type: 'Demo', l100: 20.1, kml: 9, odometer: 12000},
 ];
-
+interface Type {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  types: Type[] = [
+    {value: 'all-0', viewValue: 'All'},
+    {value: 'demo-1', viewValue: 'Demo'},
+    {value: 'rental-2', viewValue: 'Rental'}
+  ];
   title = 'material-demo';
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
   dataSource = ELEMENT_DATA;
   amount = AMOUNT_OF_VEHICLES;
-  
+  maxDate = new Date();
+  minDate = new Date(2017, 1, 1);
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
