@@ -3,10 +3,10 @@
       <mat-sidenav #sidenav mode="side" >
         <!-- user profile still has to go here  -->
         <mat-nav-list >
-         
-          <a mat-list-item  [routerLink]="'/dashboard'"  [routerLinkActive]="['active-link']" > 
-            <mat-icon svgIcon="dash" id="sidenavIcon" class="material-icons"></mat-icon> 
-            <span class="navigation-item-label">Dashboard </span>
+
+          <a mat-list-item [routerLink]="'/dashboard'" [routerLinkActiveOptions]="{ exact: true }"> 
+            <mat-icon svgIcon="dash" id="sidenavIcon"  class="material-icons"  [routerLinkActive]="['active-link']"  ></mat-icon> 
+            <span class="navigation-item-label">Dashboard</span>
           </a>
           <a mat-list-item [routerLink]="'/demos'" > 
             <mat-icon svgIcon="demos" id="sidenavIcon"  class="material-icons"  [routerLinkActive]="['active-link']"  ></mat-icon> 
