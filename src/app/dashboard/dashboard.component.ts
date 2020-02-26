@@ -39,7 +39,7 @@ export class DashboardComponent {
     {value: 'demo-1', viewValue: 'Demo'},
     {value: 'rental-2', viewValue: 'Rental'}
   ];
-  title = 'material-demo';
+  title = 'LynxWeeklyReports';
   opened= 'opened';
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
   dataSource = ELEMENT_DATA;

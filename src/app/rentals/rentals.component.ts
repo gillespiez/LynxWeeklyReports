@@ -34,7 +34,7 @@ interface Type {
   styleUrls: ['./rentals.component.css']
 })
 export class RentalsComponent  {
-  title = 'material-demo';
+  title = 'LynxWeeklyReports';
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
   dataSource = ELEMENT_DATA;
