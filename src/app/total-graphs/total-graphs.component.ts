@@ -4,11 +4,6 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute } from '@angular/router';
 import { WHITE_ON_BLACK_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 
-interface Type {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-total-graphs',
   templateUrl: './total-graphs.component.html',
@@ -18,11 +13,7 @@ export class TotalGraphsComponent {
 
   title = 'Weekly Report';
   opened= 'opened'
-  types: Type[] = [
-    {value: 'all-0', viewValue: 'All'},
-    {value: 'demo-1', viewValue: 'Demo'},
-    {value: 'rental-2', viewValue: 'Rental'}
-  ];
+
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
   constructor(
