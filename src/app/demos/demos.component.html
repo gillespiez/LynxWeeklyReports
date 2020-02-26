@@ -1,8 +1,8 @@
    
-<!-- cards -->
+<!-- cards are linked to total-graphs component-->
  
   
-<mat-card id="totalDist">
+<mat-card id="totalDist" routerLink="/totals">
   <mat-card-title>
    Distance
    <mat-icon id="cardIcon" svgIcon="distance"></mat-icon>
@@ -13,7 +13,7 @@
  </mat-card>
 
 
- <mat-card id="maxSpeed">
+ <mat-card id="maxSpeed" routerLink="/totals">
    <mat-card-title>
      Max. Speed
      <mat-icon id="cardIcon" svgIcon="speed"></mat-icon>
@@ -24,7 +24,7 @@
   </mat-card-content>
   </mat-card>
 
-  <mat-card id="totalCons">
+  <mat-card id="totalCons" routerLink="/totals">
    <mat-card-title>
     Total Consumed
     <mat-icon id="cardIcon" svgIcon="consumed"></mat-icon>
@@ -35,7 +35,7 @@
   </mat-card-content>
   </mat-card>
 
- <mat-card id="totalHours">
+ <mat-card id="totalHours" routerLink="/totals">
    <mat-card-title>
  Total Hours
 
@@ -46,7 +46,7 @@
   </mat-card-content>
   </mat-card>  
  
-<!-- table  -->
+<!-- table rows lined to per-car component -->
  <h1>All Demo Vehicles</h1>
  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
    <!-- ID -->
@@ -86,6 +86,6 @@
        </ng-container>
  
    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+   <mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/percar"></mat-row>
  </mat-table>
 
