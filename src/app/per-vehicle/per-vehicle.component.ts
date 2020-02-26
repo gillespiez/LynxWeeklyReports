@@ -172,7 +172,7 @@ export class PerVehicleComponent  {
     responsive: true,
     title: {
       display: true,
-      text: 'Engine Hours Per Day',
+      text: 'Max. Speed Per Day',
       padding: 10,
   }
   };
