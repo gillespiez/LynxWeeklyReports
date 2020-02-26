@@ -46,7 +46,8 @@ export class AppComponent {
     {value: 'demo-1', viewValue: 'Demo'},
     {value: 'rental-2', viewValue: 'Rental'}
   ];
-  title = 'LynxWeeklyReports';
+
+  title = 'Babcock';
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer'];
   dataSource = ELEMENT_DATA;
