@@ -24,10 +24,7 @@ const ELEMENT_DATA: VehicleInformation[] = [
   {vehicleID: "9", type: 'Rental', l100: 18.9, kml: 5, odometer: 12000, icon: 'keyboard_arrow_right'},
   {vehicleID: "10", type: 'Rental', l100: 20.1, kml: 9, odometer: 12000, icon: 'keyboard_arrow_right'},
 ];
-interface Type {
-  value: string;
-  viewValue: string;
-}
+
 @Component({
   selector: 'app-rentals',
   templateUrl: './rentals.component.html',
@@ -40,11 +37,15 @@ export class RentalsComponent  {
   dataSource = ELEMENT_DATA;
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
-  types: Type[] = [
-    {value: 'all-0', viewValue: 'All'},
-    {value: 'demo-1', viewValue: 'Demo'},
-    {value: 'rental-2', viewValue: 'Rental'}
-  ];
+
+  // cards data
+  totalDistance = 297;
+  maxSpeed = 116;
+  totalConsumed = 2000;
+  totalHours = 8;
+  totalMinutes = 55;
+
+
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,

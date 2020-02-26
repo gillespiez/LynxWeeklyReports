@@ -1,5 +1,6 @@
    
-<!-- cards linked to total-graphs component -->
+<!-- cards linked to total-graphs component
+    data is still hard coded -->
  
   
      <mat-card id="totalDist" routerLink="/totals">
@@ -8,7 +9,7 @@
         <mat-icon id="cardIcon" svgIcon="distance"></mat-icon>
       </mat-card-title>
       <mat-card-content>
-         <b>40000</b>km
+         <b>{{totalDistance}}</b>km
       </mat-card-content>
       </mat-card>
     
@@ -20,7 +21,7 @@
        
        </mat-card-title>
        <mat-card-content>
-          <b>116</b>km/h
+          <b>{{maxSpeed}}</b>km/h
        </mat-card-content>
        </mat-card>
     
@@ -31,7 +32,7 @@
         
        </mat-card-title>
        <mat-card-content>
-          <b>40000</b>L
+          <b>{{totalConsumed}}</b>L
        </mat-card-content>
        </mat-card>
    
@@ -42,7 +43,7 @@
           <mat-icon id="cardIcon" svgIcon="time"></mat-icon>
        </mat-card-title>
        <mat-card-content>
-          <b>10</b>h <b>40</b>min
+          <b>{{totalHours}}</b>h <b>{{totalMinutes}}</b>min
        </mat-card-content>
        </mat-card>  
       

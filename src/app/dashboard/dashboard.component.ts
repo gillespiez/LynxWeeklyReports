@@ -45,6 +45,13 @@ export class DashboardComponent {
   dataSource = ELEMENT_DATA;
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
+  
+// cards data
+  totalDistance = 497.7;
+  maxSpeed = 116;
+  totalConsumed = 400000;
+  totalHours = 10;
+  totalMinutes = 40;
 
   constructor(
     private route: ActivatedRoute,
