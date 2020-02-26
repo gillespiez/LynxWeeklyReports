@@ -77,7 +77,7 @@ h1 {
     margin-top: 20px;
     margin-left: 20px;
 }
-/* dont remove these they keep the filters on the right place  */
+/* dont remove above they keep the filters on the right place  */
 
  mat-card, #search-bar{
      width: 50%;
@@ -97,9 +97,9 @@ mat-card, #filters{
     align-items: center;
 }
 mat-icon{
-    height: 100px;
+    /* height: 100px; */
     width: 100px;
-    margin-left: 70%;
+    /* margin-left: 70%; */
     display: inline-flex;
     vertical-align: middle;
 }
