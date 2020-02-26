@@ -108,7 +108,9 @@ mat-table{
       margin-bottom: 50px;
       margin-left: 20px;
 }
-
+mat-cell {
+    max-height: 50px;
+}
 
 mat-sidenav:not(.mat-drawer-opened) {
     transform: translate3d(0, 0, 0) !important;

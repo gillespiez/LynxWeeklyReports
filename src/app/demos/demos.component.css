@@ -97,13 +97,19 @@ mat-icon{
     height: 100px;
     width: 100px;
     margin-left: 70%;
+    display: inline-flex;
+    vertical-align: middle;
 }
+
 .example-spacer {
     flex: 1 1 auto;
 }
 mat-table{
       margin-bottom: 50px;
       margin-left: 20px;
+}
+mat-cell {
+    max-height: 50px;
 }
 
 mat-sidenav:not(.mat-drawer-opened) {
@@ -132,6 +138,3 @@ mat-sidenav:not(.mat-drawer-opened) .home-button {
     width: 24px;
     margin-left: 20px;
 }
-.active-link, .material-icons{
-    fill: #C23E3E;
-    }

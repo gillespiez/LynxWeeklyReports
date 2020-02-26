@@ -1,89 +1,91 @@
+   
 <!-- cards -->
-
-
-   <mat-card id="totalDist">
-     <mat-card-title>
-      Distance
-      <mat-icon id="cardIcon" svgIcon="distance"></mat-icon>
-    </mat-card-title>
-    <mat-card-content>
-       <b>40000</b>km
-    </mat-card-content>
-    </mat-card>
-  
- <mat-card id="maxSpeed">
-      <mat-card-title>
-        Max. Speed
-        <mat-icon id="cardIcon" svgIcon="speed"></mat-icon>
-     
-     </mat-card-title>
-     <mat-card-content>
-        <b>116</b>km/h
-     </mat-card-content>
-     </mat-card>
-  
-     <mat-card id="totalCons">
-      <mat-card-title>
-       Total Consumed
-       <mat-icon id="cardIcon" svgIcon="consumed"></mat-icon>
-      
-     </mat-card-title>
-     <mat-card-content>
-        <b>40000</b>L
-     </mat-card-content>
-     </mat-card>
  
-    <mat-card id="totalHours">
-      <mat-card-title>
-    Total Hours
+  
+<mat-card id="totalDist">
+  <mat-card-title>
+   Distance
+   <mat-icon id="cardIcon" svgIcon="distance"></mat-icon>
+ </mat-card-title>
+ <mat-card-content>
+    <b>40000</b>km
+ </mat-card-content>
+ </mat-card>
 
-        <mat-icon id="cardIcon" svgIcon="time"></mat-icon>
-     </mat-card-title>
-     <mat-card-content>
-        <b>10</b>h <b>40</b>min
-     </mat-card-content>
-     </mat-card>  
-    
+
+ <mat-card id="maxSpeed">
+   <mat-card-title>
+     Max. Speed
+     <mat-icon id="cardIcon" svgIcon="speed"></mat-icon>
+  
+  </mat-card-title>
+  <mat-card-content>
+     <b>116</b>km/h
+  </mat-card-content>
+  </mat-card>
+
+  <mat-card id="totalCons">
+   <mat-card-title>
+    Total Consumed
+    <mat-icon id="cardIcon" svgIcon="consumed"></mat-icon>
+   
+  </mat-card-title>
+  <mat-card-content>
+     <b>40000</b>L
+  </mat-card-content>
+  </mat-card>
+
+ <mat-card id="totalHours">
+   <mat-card-title>
+ Total Hours
+
+     <mat-icon id="cardIcon" svgIcon="time"></mat-icon>
+  </mat-card-title>
+  <mat-card-content>
+     <b>10</b>h <b>40</b>min
+  </mat-card-content>
+  </mat-card>  
+ 
 <!-- table  -->
-    <h1>All Demo Vehicles</h1>
-    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <!-- ID -->
-     <ng-container matColumnDef="vehicleID">
-        <mat-header-cell *matHeaderCellDef> Vehicle ID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.vehicleID}} </mat-cell>
-      </ng-container>
-    
-      <!-- type -->
-      <ng-container matColumnDef="type">
-        <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
-      </ng-container>
-    
-      <!-- l/100km -->
-      <ng-container matColumnDef="l100">
-        <mat-header-cell *matHeaderCellDef> L/100km </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.l100}} </mat-cell>
-      </ng-container>
-    
-      <!-- km/L -->
-      <ng-container matColumnDef="kml">
-        <mat-header-cell *matHeaderCellDef> km/L </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.kml}} </mat-cell>
-      </ng-container>
+ <h1>All Demo Vehicles</h1>
+ <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+   <!-- ID -->
+   <ng-container matColumnDef="vehicleID">
+     <mat-header-cell *matHeaderCellDef> Vehicle ID </mat-header-cell>
+     <mat-cell *matCellDef="let element"> {{element.vehicleID}} </mat-cell>
+   </ng-container>
+ 
+   <!-- type -->
+   <ng-container matColumnDef="type">
+     <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+     <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+   </ng-container>
+ 
+   <!-- l/100km -->
+   <ng-container matColumnDef="l100">
+     <mat-header-cell *matHeaderCellDef> L/100km </mat-header-cell>
+     <mat-cell *matCellDef="let element"> {{element.l100}} </mat-cell>
+   </ng-container>
+ 
+   <!-- km/L -->
+   <ng-container matColumnDef="kml">
+     <mat-header-cell *matHeaderCellDef> km/L </mat-header-cell>
+     <mat-cell *matCellDef="let element"> {{element.kml}} </mat-cell>
+   </ng-container>
 
-      <!-- Odometer  -->
-      <ng-container matColumnDef="odometer">
-        <mat-header-cell *matHeaderCellDef> Final CAN Odometer </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.odometer}} </mat-cell>
-      </ng-container>
+   <!-- Odometer  -->
+   <ng-container matColumnDef="odometer">
+     <mat-header-cell *matHeaderCellDef> Final CAN Odometer </mat-header-cell>
+     <mat-cell *matCellDef="let element" style="text-align: right; justify-content: right;"> {{element.odometer}} </mat-cell>
+   </ng-container>
 
-      <!-- Icon  -->
-      <ng-container matColumnDef="icon">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
-          <mat-cell *matCellDef="let element"><mat-icon >{{element.icon}}</mat-icon></mat-cell>
-        </ng-container>
-    
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
+       <!-- Icon  -->
+       <ng-container matColumnDef="icon">
+         <mat-header-cell *matHeaderCellDef></mat-header-cell>
+         <mat-cell *matCellDef="let element"><mat-icon style="margin-top: 70px;">{{element.icon}}</mat-icon></mat-cell>
+       </ng-container>
+ 
+   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+ </mat-table>
 
