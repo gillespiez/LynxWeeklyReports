@@ -1,45 +1,4 @@
 
-  <!-- search and filters -->
-  
-  <mat-card id="search-bar">
-  
-    <!-- search goes here -->
-    <!-- <mat-icon svgIcon="searchicon"></mat-icon> -->
-    <mat-form-field color="warn" class="search-form">
-     
-      <mat-label>Search For A Vehicle</mat-label>
-      <input matInput>
-    </mat-form-field>
-    
-  </mat-card>
-  <mat-card id="filters">
-    <mat-card-content style="font-size: 16px;">
-      <mat-form-field class="filter-form" color="warn" style="margin-right: 24px">
-        <mat-label style="color:whitesmoke">Choose A Start Date</mat-label>
-          <input matInput  [matDatepicker]="myDatepicker" [min]="minDate">
-          <mat-datepicker-toggle style="color:whitesmoke" matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
-          <mat-datepicker #myDatepicker color="warn"></mat-datepicker>
-  
-        </mat-form-field>
-        <mat-form-field class="filter-form" color="warn" style="margin-right: 24px">
-          <mat-label  style="color:whitesmoke">Choose An End Date</mat-label>
-            <input matInput  [matDatepicker]="myDatepicker2" [min]="minDate">
-            <mat-datepicker-toggle  style="color:whitesmoke" matSuffix [for]="myDatepicker2"></mat-datepicker-toggle>
-            <mat-datepicker #myDatepicker2 color="warn"></mat-datepicker>
-          </mat-form-field>
-  
-          <mat-form-field class="filter-form" color="warn">
-            <mat-label  style="color:whitesmoke">Filter by Type</mat-label>
-            <mat-select  style="color:whitesmoke">
-              <mat-option *ngFor="let type of types" [value]="type.value">
-                {{type.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-      </mat-card-content>
-    </mat-card>
-         
-       
   <!-- cards -->
  <div class="cardsgohere">
      <mat-card id="totalDist">
