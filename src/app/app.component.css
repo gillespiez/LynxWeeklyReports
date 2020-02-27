@@ -139,3 +139,8 @@ mat-card-title, #totalCons {
 .labelColours {
     color: whitesmoke;
 }
+.mat-select-arrow {
+    color: whitesmoke;
+    vertical-align: middle;
+    margin-left: 80%;
+}
