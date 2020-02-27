@@ -1,39 +1,33 @@
 <!-- graphs  -->
 <mat-grid-list cols='2' rowHeight='2:1' gutterSize='24px' class='gridList'>
-    <mat-grid-tile colspan='2' style='background-color: black;'> 
-        <div class='perCarGraph'>
-            <canvas 
-                baseChart   
-                [datasets]='perCarData'
-                [labels]='perCarLabels'
-                [options]='perCarOptions'
-                [legend]='perCarLegend'
-                [chartType]='perCarType'>
-            </canvas>
-        </div>
+    <mat-grid-tile colspan='2' class='blackGrid'> 
+        <canvas 
+            baseChart   
+            [datasets]='perCarData'
+            [labels]='perCarLabels'
+            [options]='perCarOptions'
+            [legend]='perCarLegend'
+            [chartType]='perCarType'>
+        </canvas>
     </mat-grid-tile>
-    <mat-grid-tile  colspan='1'  style='background-color: white;'>
-        <div class='perTypeGraph'>
-            <canvas 
-                baseChart       
-                [datasets]='perTypeData'
-                [labels]='perTypeLabels'
-                [options]='perTypeOptions'
-                [legend]='perTypeLegend'
-                [chartType]='perTypeType'>
-            </canvas>
-        </div>
+    <mat-grid-tile  colspan='1' class='whiteGrids'>
+        <canvas 
+            baseChart       
+            [datasets]='perTypeData'
+            [labels]='perTypeLabels'
+            [options]='perTypeOptions'
+            [legend]='perTypeLegend'
+            [chartType]='perTypeType'>
+        </canvas>
     </mat-grid-tile>
-    <mat-grid-tile  colspan='1'  style='background-color: white;'>
-        <div class='perDayGraph'>
-            <canvas 
-                baseChart
-                [datasets]='perDayData'
-                [labels]='perDayLabels'
-                [options]='perDayOptions'
-                [legend]='perDayLegend'
-                [chartType]='perDayType'>
-            </canvas>
-        </div>
+    <mat-grid-tile  colspan='1' class='whiteGrids'>
+        <canvas 
+            baseChart
+            [datasets]='perDayData'
+            [labels]='perDayLabels'
+            [options]='perDayOptions'
+            [legend]='perDayLegend'
+            [chartType]='perDayType'>
+        </canvas>
     </mat-grid-tile>
 </mat-grid-list> 

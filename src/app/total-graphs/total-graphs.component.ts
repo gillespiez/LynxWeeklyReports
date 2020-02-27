@@ -125,7 +125,7 @@ export class TotalGraphsComponent {
     responsive: true,
     title: {
       display: true,
-      text: 'Engine Hours Per Day',
+      text: 'Per Type',
       padding: 10,
     }
   };

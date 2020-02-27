@@ -1,21 +1,14 @@
 /* graphs */
-.perCarGraph{
-    background-color: black;
-    height: 95%;
-    width: 95%;
-}
-.perTypeGraph{
-    background-color: white;
-    height: 95%;
-    width: 95%;
-}
-.perDayGraph{
-    background-color: white;
-    height: 95%;
-    width: 95%;
-}
 .gridList{
     margin-left: 2.5%;
-    margin-bottom: 2.5%;
+    margin-bottom: 1%;
     width: 95%;
+}
+.blackGrid {
+    background-color: black;
+}
+.whiteGrids {
+    background-color: white;
+    height: fit-content;
+    padding-bottom: 20px;
 }
