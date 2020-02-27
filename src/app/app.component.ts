@@ -7,12 +7,15 @@ interface Type {
   value: string;
   viewValue: string;
 }
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+  
   types: Type[] = [
     {value: 'all-0', viewValue: 'All'},
     {value: 'demo-1', viewValue: 'Demo'},
@@ -106,5 +109,5 @@ export class AppComponent {
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/menubutt.svg",
       )
     );
-}
+  }
 }

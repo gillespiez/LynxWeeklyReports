@@ -31,6 +31,7 @@ const ELEMENT_DATA: VehicleInformation[] = [
   styleUrls: ['./rentals.component.css']
 })
 export class RentalsComponent  {
+
   title = 'LynxWeeklyReports';
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
@@ -125,5 +126,5 @@ export class RentalsComponent  {
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/menubutt.svg",
       )
     );
-}
+  }
 }

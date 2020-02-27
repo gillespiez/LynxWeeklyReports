@@ -98,7 +98,7 @@ export class TotalGraphsComponent {
   }
 
  
-//  per car 
+  //  per car 
   public perCarOptions = {
     maintainAspectRatio : false,
     scaleShowVerticalLines: false,
@@ -107,7 +107,7 @@ export class TotalGraphsComponent {
       display: true,
       text: 'Engine Hours Per Car',
       padding: 10,
-  }
+    }
   };
   public perCarLabels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
   public perCarType = 'line';
@@ -117,8 +117,7 @@ export class TotalGraphsComponent {
     data: [10, 16, 24, 2, 5, 20, 1, 5, 20, 1],
     label: 'Engine hours',
     fill: false
-  }
-  ];
+    }];
 
   //  speed per day 
   public perTypeOptions = {
@@ -128,7 +127,7 @@ export class TotalGraphsComponent {
       display: true,
       text: 'Engine Hours Per Day',
       padding: 10,
-  }
+    }
   };
   public perTypeLabels = ['Demo', 'Rental'];
   public perTypeType = 'pie';
@@ -137,18 +136,17 @@ export class TotalGraphsComponent {
     backgroundColor: ['rgb(194,62,62)','black'],
     data: [110, 125],
     fill: false
-  }
-  ];
+  }];
 
-   // per day
-   public perDayOptions = {
+  // per day
+  public perDayOptions = {
     scaleShowVerticalLines: true,
     responsive: true,
     title: {
       display: true,
       text: 'Distance Per Day',
       padding: 10,
-  }
+    }
   };
   public perDayLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
   public perDayType = 'bar';
@@ -157,6 +155,5 @@ export class TotalGraphsComponent {
     backgroundColor: 'rgb(194,62,62)',
     data: [1000, 520, 856, 852, 62, 125, 600],
     label: 'Distance in km'
-  }
-  ];
+  }];
 }

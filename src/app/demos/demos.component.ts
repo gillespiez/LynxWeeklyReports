@@ -31,6 +31,7 @@ const ELEMENT_DATA: VehicleInformation[] = [
   styleUrls: ['./demos.component.css']
 })
 export class DemosComponent {
+
   title = 'Weekly Report';
   opened= 'opened'
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
@@ -124,5 +125,5 @@ export class DemosComponent {
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/menubutt.svg",
       )
     );
-}
+  }
 }

@@ -24,21 +24,15 @@ const ELEMENT_DATA: VehicleInformation[] = [
   {vehicleID: "REN-0238 (FYH887FS)", type: 'Rental', l100: 18.9, kml: 5, odometer: 12000, icon:  'keyboard_arrow_right'},
   {vehicleID: "DEM-0572 (FC57HBGP)", type: 'Demo', l100: 20.1, kml: 9, odometer: 12000, icon: 'keyboard_arrow_right'},
 ];
-interface Type {
-  value: string;
-  viewValue: string;
-}
+
 @Component({
   selector: 'app-root',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent {
-  types: Type[] = [
-    {value: 'all-0', viewValue: 'All'},
-    {value: 'demo-1', viewValue: 'Demo'},
-    {value: 'rental-2', viewValue: 'Rental'}
-  ];
+
   title = 'LynxWeeklyReports';
   opened= 'opened';
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
@@ -46,7 +40,7 @@ export class DashboardComponent {
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
   
-// cards data
+  // cards data
   totalDistance = 497.7;
   maxSpeed = 116;
   totalConsumed = 400000;

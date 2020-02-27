@@ -10,13 +10,13 @@ import { R3TargetBinder } from '@angular/compiler';
   styleUrls: ['./per-vehicle.component.css']
 })
 export class PerVehicleComponent  {
+
   title = 'Weekly Report';
   opened= 'opened'
- 
-
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
-
+ 
+  // cards data 
   totalDistance = 400;
   maxSpeed = 60;
   totalHours = 4;
@@ -112,7 +112,7 @@ export class PerVehicleComponent  {
       display: true,
       text: 'Distance Per Day',
       padding: 10,
-  }
+    }
   };
   public barChartLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
   public barChartType = 'bar';
@@ -121,9 +121,10 @@ export class PerVehicleComponent  {
     backgroundColor: 'rgb(194,62,62)',
     data: [1000, 520, 856, 852, 62, 125, 600],
     label: 'Distance in km'
-  }
+    }
   ];
-//  engin hours 
+
+  //  engin hours 
   public engineHoursOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -131,7 +132,7 @@ export class PerVehicleComponent  {
       display: true,
       text: 'Engine Hours Per Day',
       padding: 10,
-  }
+    }
   };
   public engineHoursLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
   public engineHoursType = 'line';
@@ -141,7 +142,7 @@ export class PerVehicleComponent  {
     data: [10, 16, 24, 2, 5, 20, 1],
     label: 'Engine hours',
     fill: false
-  }
+    }
   ];
 
   //  speed per day 
@@ -152,7 +153,7 @@ export class PerVehicleComponent  {
       display: true,
       text: 'Max. Speed Per Day',
       padding: 10,
-  }
+    }
   };
   public maxSpeedLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
   public maxSpeedType = 'line';
@@ -162,6 +163,6 @@ export class PerVehicleComponent  {
     data: [110, 125, 200, 2, 50, 80, 89],
     label: 'Max speed in km/h',
     fill: false
-  }
+    }
   ];
 }
