@@ -16,10 +16,10 @@ const appRoutes: Routes = [
   },
 
   {path: '', component: ToolbarComponent,
-  children:[
-    {path: '', component: DashboardComponent}
-  ]
-},
+    children:[
+      {path: '', component: DashboardComponent}
+    ]
+  },
 
   {path: 'rentals', component: ToolbarComponent,
     children:[
@@ -44,7 +44,6 @@ const appRoutes: Routes = [
       {path: '', component: TotalGraphsComponent}
     ]
   },
-
 ];
 
 @NgModule({
