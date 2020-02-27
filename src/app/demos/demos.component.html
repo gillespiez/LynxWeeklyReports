@@ -1,38 +1,38 @@
 <!-- cards are linked to total-graphs component-->
-<mat-card id="totalDist" routerLink="/totals">
+<mat-card id='totalDist' routerLink='/totals'>
   <mat-card-title>
    Distance
-   <mat-icon id="cardIcon" svgIcon="distance"></mat-icon>
+   <mat-icon id='cardIcon' svgIcon='distance'></mat-icon>
   </mat-card-title>
   <mat-card-content>
     <b>{{totalDistance}}</b>km
   </mat-card-content>
 </mat-card>
 
-<mat-card id="maxSpeed" routerLink="/totals">
+<mat-card id='maxSpeed' routerLink='/totals'>
   <mat-card-title>
     Max. Speed
-    <mat-icon id="cardIcon" svgIcon="speed"></mat-icon>
+    <mat-icon id='cardIcon' svgIcon='speed'></mat-icon>
  `</mat-card-title>
   <mat-card-content>
     <b>{{maxSpeed}}</b>km/h
   </mat-card-content>
 </mat-card>
 
-<mat-card id="totalCons" routerLink="/totals">
+<mat-card id='totalCons' routerLink='/totals'>
   <mat-card-title>
     Total Consumed
-    <mat-icon id="cardIcon" svgIcon="consumed"></mat-icon>
+    <mat-icon id='cardIcon' svgIcon='consumed'></mat-icon>
   </mat-card-title>
   <mat-card-content>
     <b>{{totalConsumed}}</b>L
   </mat-card-content>
 </mat-card>
 
-<mat-card id="totalHours" routerLink="/totals">
+<mat-card id='totalHours' routerLink='/totals'>
   <mat-card-title>
     Total Hours
-    <mat-icon id="cardIcon" svgIcon="time"></mat-icon>
+    <mat-icon id='cardIcon' svgIcon='time'></mat-icon>
   </mat-card-title>
   <mat-card-content>
     <b>{{totalHours}}</b>h <b>{{totalMinutes}}</b>min
@@ -41,44 +41,44 @@
  
 <!-- table rows lined to per-car component -->
 <h1>All Demo Vehicles</h1>
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-table [dataSource]='dataSource' class='mat-elevation-z8'>
   <!-- ID -->
-  <ng-container matColumnDef="vehicleID">
+  <ng-container matColumnDef='vehicleID'>
     <mat-header-cell *matHeaderCellDef> Vehicle ID </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.vehicleID}} </mat-cell>
+    <mat-cell *matCellDef='let element'> {{element.vehicleID}} </mat-cell>
   </ng-container>
  
   <!-- type -->
-  <ng-container matColumnDef="type">
+  <ng-container matColumnDef='type'>
     <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+    <mat-cell *matCellDef='let element'> {{element.type}} </mat-cell>
   </ng-container>
  
   <!-- l/100km -->
-  <ng-container matColumnDef="l100">
+  <ng-container matColumnDef='l100'>
     <mat-header-cell *matHeaderCellDef> L/100km </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.l100}} </mat-cell>
+    <mat-cell *matCellDef='let element'> {{element.l100}} </mat-cell>
   </ng-container>
  
   <!-- km/L -->
-  <ng-container matColumnDef="kml">
+  <ng-container matColumnDef='kml'>
     <mat-header-cell *matHeaderCellDef> km/L </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.kml}} </mat-cell>
+    <mat-cell *matCellDef='let element'> {{element.kml}} </mat-cell>
   </ng-container>
 
   <!-- Odometer  -->
-  <ng-container matColumnDef="odometer">
+  <ng-container matColumnDef='odometer'>
     <mat-header-cell *matHeaderCellDef> Final CAN Odometer </mat-header-cell>
-    <mat-cell *matCellDef="let element" style="text-align: right; justify-content: right;"> {{element.odometer}} </mat-cell>
+    <mat-cell *matCellDef='let element' style='text-align: right; justify-content: right;'> {{element.odometer}} </mat-cell>
   </ng-container>
 
   <!-- Icon  -->
-  <ng-container matColumnDef="icon">
+  <ng-container matColumnDef='icon'>
     <mat-header-cell *matHeaderCellDef></mat-header-cell>
-    <mat-cell *matCellDef="let element"><mat-icon style="margin-top: 70px;">{{element.icon}}</mat-icon></mat-cell>
+    <mat-cell *matCellDef='let element'><mat-icon style='margin-top: 70px;'>{{element.icon}}</mat-icon></mat-cell>
   </ng-container>
  
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/percar"></mat-row>
+  <mat-header-row *matHeaderRowDef='displayedColumns'></mat-header-row>
+  <mat-row *matRowDef='let row; columns: displayedColumns;' routerLink='/percar'></mat-row>
 </mat-table>
 

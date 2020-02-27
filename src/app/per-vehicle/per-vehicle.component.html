@@ -1,39 +1,39 @@
 <!-- cards -->
-<div class="cardsgohere">
-   <mat-card id="totalDist">
+<div class='cardsgohere'>
+   <mat-card id='totalDist'>
       <mat-card-title>
          Distance
-         <mat-icon id="cardIcon" svgIcon="distance"></mat-icon>
+         <mat-icon id='cardIcon' svgIcon='distance'></mat-icon>
       </mat-card-title>
       <mat-card-content>
          <b>{{totalDistance}}</b>km
       </mat-card-content>
    </mat-card> 
   
-   <mat-card id="maxSpeed">
+   <mat-card id='maxSpeed'>
       <mat-card-title>
          Max. Speed
-         <mat-icon id="cardIcon" svgIcon="speed"></mat-icon>
+         <mat-icon id='cardIcon' svgIcon='speed'></mat-icon>
       </mat-card-title>
       <mat-card-content>
          <b>{{maxSpeed}}</b>km/h
       </mat-card-content>
    </mat-card>
    
-   <mat-card id="totalHours">
+   <mat-card id='totalHours'>
       <mat-card-title>
          Total Hours
-         <mat-icon id="cardIcon" svgIcon="time"></mat-icon>
+         <mat-icon id='cardIcon' svgIcon='time'></mat-icon>
       </mat-card-title>
       <mat-card-content>
          <b>{{totalHours}}</b>h <b>{{totalMinutes}}</b>min
       </mat-card-content>
    </mat-card> 
            
-   <mat-card id="totalCons">
+   <mat-card id='totalCons'>
       <mat-card-title>
          Total Consumed
-         <mat-icon id="cardIcon" svgIcon="consumed"></mat-icon>
+         <mat-icon id='cardIcon' svgIcon='consumed'></mat-icon>
       </mat-card-title>
       <mat-card-content>
          <b>{{totalConsumed}}</b>L
@@ -42,33 +42,33 @@
 </div>
   
 <!-- graphs  -->
-<div class="engineHoursGraph">
+<div class='engineHoursGraph'>
    <canvas baseChart 
-      [datasets]="engineHoursData"
-      [labels]="engineHoursLabels"
-      [options]="engineHoursOptions"
-      [legend]="engineHoursLegend"
-      [chartType]="engineHoursType">
+      [datasets]='engineHoursData'
+      [labels]='engineHoursLabels'
+      [options]='engineHoursOptions'
+      [legend]='engineHoursLegend'
+      [chartType]='engineHoursType'>
    </canvas>
 </div>
 
-<div class="maxSpeedGraph">
+<div class='maxSpeedGraph'>
    <canvas baseChart       
-      [datasets]="maxSpeedData"
-      [labels]="maxSpeedLabels"
-      [options]="maxSpeedOptions"
-      [legend]="maxSpeedLegend"
-      [chartType]="maxSpeedType">
+      [datasets]='maxSpeedData'
+      [labels]='maxSpeedLabels'
+      [options]='maxSpeedOptions'
+      [legend]='maxSpeedLegend'
+      [chartType]='maxSpeedType'>
    </canvas>
 </div>
 
-<div class="totalDistanceGraph">
+<div class='totalDistanceGraph'>
     <canvas baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [legend]="barChartLegend"
-      [chartType]="barChartType">
+      [datasets]='barChartData'
+      [labels]='barChartLabels'
+      [options]='barChartOptions'
+      [legend]='barChartLegend'
+      [chartType]='barChartType'>
     </canvas>
 </div>
   
