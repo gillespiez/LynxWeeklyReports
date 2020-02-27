@@ -18,6 +18,7 @@ import { PerVehicleComponent } from './modules/reports/per-vehicle/per-vehicle.c
 import { TotalGraphsComponent } from './modules/reports/total-graphs/total-graphs.component'
 
 import { ChartsModule } from 'ng2-charts';
+import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { ChartsModule } from 'ng2-charts';
     DemosComponent,
     PerVehicleComponent,
     TotalGraphsComponent,
+    ToolbarComponent,
 
   ],
   bootstrap: [AppComponent]
