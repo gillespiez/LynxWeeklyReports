@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent }   from './dashboard/dashboard.component';
-import { RentalsComponent } from './rentals/rentals.component';
-import { DemosComponent } from './demos/demos.component';
-import { PerVehicleComponent } from './per-vehicle/per-vehicle.component';
-import { TotalGraphsComponent } from './total-graphs/total-graphs.component';
+import { DashboardComponent }   from './modules/reports/dashboard/dashboard.component';
+import { RentalsComponent } from './modules/reports/rentals/rentals.component';
+import { DemosComponent } from './modules/reports/demos/demos.component';
+import { PerVehicleComponent } from './modules/reports/per-vehicle/per-vehicle.component';
+import { TotalGraphsComponent } from './modules/reports/total-graphs/total-graphs.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },

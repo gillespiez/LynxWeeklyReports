@@ -11,11 +11,11 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from "@angular/material/icon";
 import { HttpClientModule } from "@angular/common/http";
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RentalsComponent } from './rentals/rentals.component';
-import { DemosComponent } from './demos/demos.component';
-import { PerVehicleComponent } from './per-vehicle/per-vehicle.component';
-import { TotalGraphsComponent } from './total-graphs/total-graphs.component'
+import { DashboardComponent } from './modules/reports/dashboard/dashboard.component';
+import { RentalsComponent } from './modules/reports/rentals/rentals.component';
+import { DemosComponent } from './modules/reports/demos/demos.component';
+import { PerVehicleComponent } from './modules/reports/per-vehicle/per-vehicle.component';
+import { TotalGraphsComponent } from './modules/reports/total-graphs/total-graphs.component'
 
 import { ChartsModule } from 'ng2-charts';
 
