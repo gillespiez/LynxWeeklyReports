@@ -34,18 +34,23 @@ const ELEMENT_DATA: VehicleInformation[] = [
   styleUrls: ['./dashboard.component.css']
 })
 
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
   title = 'LynxWeeklyReports';
   opened= 'opened';
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-  ngOnInit() {
-    this.dataSource.sort = this.dataSource.sort;
+  applyFilter(filterValue: string){
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+
+  // @ViewChild(MatSort, {static: true}) sort: MatSort;
+
+  // ngOnInit() {
+  //   this.dataSource.sort = this.dataSource.sort;
+  // }
 
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);

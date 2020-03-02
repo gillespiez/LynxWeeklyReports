@@ -3,6 +3,9 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
+import { Input, Output,EventEmitter } from '@angular/core';
+
+
 interface Type {
   value: string;
   viewValue: string;
@@ -13,6 +16,7 @@ interface Type {
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
+
 export class ToolbarComponent {
   types: Type[] = [
     {value: 'all-0', viewValue: 'All'},
@@ -27,6 +31,8 @@ export class ToolbarComponent {
 
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
+  searchword: String;
+  
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
@@ -107,4 +113,10 @@ export class ToolbarComponent {
       )
     );
   }
+
+  @Output() searchcriteria = new EventEmitter<String>();
+  searchThis() {
+      this.searchcriteria.emit(this.searchword)
+}
+
 }

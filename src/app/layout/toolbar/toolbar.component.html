@@ -5,17 +5,17 @@
     <mat-nav-list >
       <a mat-list-item [routerLink]="'/dashboard'"> 
         <mat-icon svgIcon='dash' id='sidenavIcon'  class='material-icons'  [routerLinkActive]="['active-link']"  ></mat-icon> 
-        <span class="navigation-item-label">Dashboard</span>
+        <span class='navigation-item-label'>Dashboard</span>
       </a>
 
       <a mat-list-item [routerLink]="'/demos'" > 
         <mat-icon svgIcon='demos' id='sidenavIcon'  class='material-icons' [routerLinkActive]="['active-link']"  ></mat-icon> 
-        <span class="navigation-item-label">Demo Vehicles </span>
+        <span class='navigation-item-label'>Demo Vehicles </span>
       </a>
 
       <a mat-list-item [routerLink]="'/rentals'">  
         <mat-icon svgIcon='rentals' id='sidenavIcon' class='material-icons'  [routerLinkActive]="['active-link']"  ></mat-icon>
-        <span class="navigation-item-label">Rental Vehicles</span>
+        <span class='navigation-item-label'>Rental Vehicles</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -35,9 +35,7 @@
     <!-- search and filters -->
     <mat-card id='search-bar'>
       <mat-form-field color='warn' class='search-form'>
-        <!-- <mat-icon svgIcon="searchicon"></mat-icon> -->
-        <!-- <mat-label>Search For A Vehicle</mat-label> -->
-        <input matInput placeholder="&#61442;  Search For A Vehicle" >
+        <input matInput placeholder='&#61442;  Search For A Vehicle' [(ngModel)]='searchword' (input)='searchThis()'>
       </mat-form-field>
   
       </mat-card>
