@@ -41,34 +41,34 @@
       
 <!-- table rows are linked to per-car component -->
 <h1>All Vehicles</h1>
-<mat-table [dataSource]='dataSource' class='mat-elevation-z8'>
+<mat-table [dataSource]='dataSource' matSort class='mat-elevation-z8'>
   <!-- ID -->
   <ng-container matColumnDef='vehicleID'>
-      <mat-header-cell *matHeaderCellDef> Vehicle ID </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle ID </mat-header-cell>
       <mat-cell *matCellDef='let element'> {{element.vehicleID}} </mat-cell>
   </ng-container>
       
   <!-- type -->
   <ng-container matColumnDef='type'>
-    <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
     <mat-cell *matCellDef='let element'> {{element.type}} </mat-cell>
   </ng-container>
       
   <!-- l/100km -->
   <ng-container matColumnDef='l100'>
-    <mat-header-cell *matHeaderCellDef> L/100km </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> L/100km </mat-header-cell>
     <mat-cell *matCellDef='let element' > {{element.l100}} </mat-cell>
   </ng-container>
       
   <!-- km/L -->
   <ng-container matColumnDef='kml'>
-    <mat-header-cell *matHeaderCellDef> km/L </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> km/L </mat-header-cell>
     <mat-cell *matCellDef='let element'> {{element.kml}} </mat-cell>
   </ng-container>
   
   <!-- Odometer  -->
   <ng-container matColumnDef='odometer'>
-    <mat-header-cell *matHeaderCellDef> Final CAN Odometer </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Final CAN Odometer </mat-header-cell>
     <mat-cell *matCellDef='let element'> {{element.odometer}} </mat-cell>
   </ng-container>
   

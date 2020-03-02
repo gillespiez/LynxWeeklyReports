@@ -20,6 +20,7 @@ import { TotalGraphsComponent } from './modules/reports/total-graphs/total-graph
 import { ChartsModule } from 'ng2-charts';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 
+
 @NgModule({
   imports: [
     BrowserModule,

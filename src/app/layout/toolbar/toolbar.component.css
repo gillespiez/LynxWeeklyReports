@@ -23,13 +23,13 @@ mat-sidenav {
 .search-form {
     width: 100%;
 }
- mat-card, #search-bar {
-     width: 50%;
-     height: 40px;
-     margin-bottom: 20px;
+#search-bar {
+    width: 50%;
+    height: 40px;
+    margin-bottom: 20px;
     background-color: white;
     margin-left: 2.5%;
-    /* align-content: center; */
+    color: black;
 }
 #filters {
     width: 40%;

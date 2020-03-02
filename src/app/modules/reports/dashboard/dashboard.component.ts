@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { ViewChild } from '@angular/core'
+import { MatSort } from '@angular/material/sort'
+import { MatTableDataSource } from '@angular/material/table'
 
 export interface VehicleInformation {
   vehicleID: string;
@@ -31,12 +34,19 @@ const ELEMENT_DATA: VehicleInformation[] = [
   styleUrls: ['./dashboard.component.css']
 })
 
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
   title = 'LynxWeeklyReports';
   opened= 'opened';
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
+  ngOnInit() {
+    this.dataSource.sort = this.dataSource.sort;
+  }
+
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
   
