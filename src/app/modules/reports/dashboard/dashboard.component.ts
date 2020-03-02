@@ -46,11 +46,11 @@ export class DashboardComponent {
   }
 
 
-  // @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  // ngOnInit() {
-  //   this.dataSource.sort = this.dataSource.sort;
-  // }
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+  }
 
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
