@@ -3,7 +3,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
-import { Input, Output,EventEmitter } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 
 interface Type {
@@ -27,16 +27,16 @@ export class ToolbarComponent {
   title = 'Babcock';
   totalCars = 42;
 
-  opened= 'opened';
+  opened = 'opened';
 
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
-  searchword: String;
-  
+  searchword: string;
+
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer){
+    private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -114,9 +114,9 @@ export class ToolbarComponent {
     );
   }
 
-  @Output() searchcriteria = new EventEmitter<String>();
+  @Output() searchcriteria = new EventEmitter<string>();
   searchThis() {
-      this.searchcriteria.emit(this.searchword)
+      this.searchcriteria.emit(this.searchword);
 }
 
 }

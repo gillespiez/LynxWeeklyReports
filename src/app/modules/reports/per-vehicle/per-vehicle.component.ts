@@ -12,11 +12,11 @@ import { R3TargetBinder } from '@angular/compiler';
 export class PerVehicleComponent  {
 
   title = 'Weekly Report';
-  opened= 'opened'
+  opened = 'opened';
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
- 
-  // cards data 
+
+  // cards data
   totalDistance = 400;
   maxSpeed = 60;
   totalHours = 4;
@@ -26,7 +26,7 @@ export class PerVehicleComponent  {
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer){
+    private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -124,7 +124,7 @@ export class PerVehicleComponent  {
     }
   ];
 
-  //  engin hours 
+  //  engin hours
   public engineHoursOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -145,7 +145,7 @@ export class PerVehicleComponent  {
     }
   ];
 
-  //  speed per day 
+  //  speed per day
   public maxSpeedOptions = {
     scaleShowVerticalLines: false,
     responsive: true,

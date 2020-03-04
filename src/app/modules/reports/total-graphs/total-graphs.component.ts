@@ -12,14 +12,14 @@ import { WHITE_ON_BLACK_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/h
 export class TotalGraphsComponent {
 
   title = 'Weekly Report';
-  opened= 'opened'
+  opened = 'opened';
 
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer){
+    private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -97,8 +97,8 @@ export class TotalGraphsComponent {
     );
   }
 
- 
-  //  per car 
+
+  //  per car
   public perCarOptions = {
     maintainAspectRatio : false,
     scaleShowVerticalLines: false,
@@ -119,7 +119,7 @@ export class TotalGraphsComponent {
     fill: false
     }];
 
-  //  speed per day 
+  //  speed per day
   public perTypeOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -133,7 +133,7 @@ export class TotalGraphsComponent {
   public perTypeType = 'pie';
   public perTypeLegend = true;
   public perTypeData = [{
-    backgroundColor: ['rgb(194,62,62)','black'],
+    backgroundColor: ['rgb(194,62,62)', 'black'],
     data: [110, 125],
     fill: false
   }];

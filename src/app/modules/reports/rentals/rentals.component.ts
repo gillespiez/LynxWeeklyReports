@@ -15,12 +15,12 @@ export interface VehicleInformation {
 const ELEMENT_DATA: VehicleInformation[] = [
   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 1.7, kml: 10, odometer: 12000, icon: 'keyboard_arrow_right'},
   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 4.6, kml: 8, odometer: 12000, icon: 'keyboard_arrow_right'},
-  {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 6.1, kml: 9,odometer: 12000, icon: 'keyboard_arrow_right'},
+  {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 6.1, kml: 9, odometer: 12000, icon: 'keyboard_arrow_right'},
   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 9.2, kml: 4, odometer: 12000, icon: 'keyboard_arrow_right'},
   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 10.1, kml: 1, odometer: 12000, icon: 'keyboard_arrow_right'},
   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 12.7, kml: 1, odometer: 12000, icon: 'keyboard_arrow_right'},
   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 14.7, kml: 5, odometer: 12000, icon: 'keyboard_arrow_right'},
-  {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 15.4, kml:8, odometer: 12000, icon: 'keyboard_arrow_right'},
+  {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 15.4, kml : 8, odometer: 12000, icon: 'keyboard_arrow_right'},
   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 18.9, kml: 5, odometer: 12000, icon: 'keyboard_arrow_right'},
   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 20.1, kml: 9, odometer: 12000, icon: 'keyboard_arrow_right'},
 ];
@@ -33,7 +33,7 @@ const ELEMENT_DATA: VehicleInformation[] = [
 export class RentalsComponent  {
 
   title = 'LynxWeeklyReports';
-  opened= 'opened'
+  opened = 'opened';
   displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
   dataSource = ELEMENT_DATA;
   maxDate = new Date();
@@ -50,7 +50,7 @@ export class RentalsComponent  {
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer){
+    private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
