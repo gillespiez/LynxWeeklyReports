@@ -46,9 +46,9 @@
 </mat-form-field> -->
 <mat-table [dataSource]='dataSource' matSort class='mat-elevation-z8'>
   <!-- ID -->
-  <ng-container matColumnDef='vehicleID'>
+  <ng-container matColumnDef='id'>
       <mat-header-cell *matHeaderCellDef mat-sort-header> Vehicle ID </mat-header-cell>
-      <mat-cell *matCellDef='let element'> {{element.vehicleID}} </mat-cell>
+      <mat-cell *matCellDef='let element'> {{element.id}} </mat-cell>
   </ng-container>
       
   <!-- type -->
@@ -76,9 +76,11 @@
   </ng-container>
   
   <!-- Icon  -->
-  <ng-container matColumnDef='icon'>
+  <ng-container matColumnDef='actions'>
     <mat-header-cell *matHeaderCellDef></mat-header-cell>
-    <mat-cell *matCellDef='let element'><mat-icon class='chevron'>{{element.icon}}</mat-icon></mat-cell>
+    <mat-cell *matCellDef='let element'>
+      <button mat-icon-button><mat-icon>keyboard_arrow_right</mat-icon></button>
+    </mat-cell>
   </ng-container>
       
   <mat-header-row *matHeaderRowDef='displayedColumns'></mat-header-row>
