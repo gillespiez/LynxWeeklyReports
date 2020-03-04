@@ -11,18 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 
-import { DashboardComponent } from './modules/reports/dashboard/dashboard.component';
-import { RentalsComponent } from './modules/reports/rentals/rentals.component';
-import { DemosComponent } from './modules/reports/demos/demos.component';
-import { PerVehicleComponent } from './modules/reports/per-vehicle/per-vehicle.component';
-import { TotalGraphsComponent } from './modules/reports/total-graphs/total-graphs.component';
-
 import { ChartsModule } from 'ng2-charts';
-import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 
+import {ModulesModule} from './modules/modules.module';
+import {LayoutModule} from './layout/layout.module';
 
 @NgModule({
   imports: [
+    ModulesModule,
+    LayoutModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -36,13 +33,6 @@ import { ToolbarComponent } from './layout/toolbar/toolbar.component';
   providers: [],
   declarations: [
     AppComponent,
-    DashboardComponent,
-    RentalsComponent,
-    DemosComponent,
-    PerVehicleComponent,
-    TotalGraphsComponent,
-    ToolbarComponent,
-
   ],
   bootstrap: [AppComponent]
 })

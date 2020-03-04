@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-
 import { Input, Output, EventEmitter } from '@angular/core';
 
 
@@ -117,6 +116,6 @@ export class ToolbarComponent {
   @Output() searchcriteria = new EventEmitter<string>();
   searchThis() {
       this.searchcriteria.emit(this.searchword);
-}
+  }
 
 }
