@@ -2,20 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { ViewChild } from '@angular/core'
-import { MatSort } from '@angular/material/sort'
-import { MatTableDataSource } from '@angular/material/table'
+import { ViewChild } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { VehicleService } from '../services/vehicle.service';
 import { VehicleInfo } from '../models/vehicle.model';
 
-export interface VehicleInformation {
-  vehicleID: string;
-  type: string;
-  l100: number;
-  kml: number;
-  odometer: number;
-  icon: string;
-}
+// export interface VehicleInformation {
+//   vehicleID: string;
+//   type: string;
+//   l100: number;
+//   kml: number;
+//   odometer: number;
+//   icon: string;
+// }
 
 // const ELEMENT_DATA: VehicleInformation[] = [
 //   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 1.7, kml: 10, odometer: 12000, icon:  'keyboard_arrow_right'},
@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit {
 
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
-  
+
   // cards data
   totalDistance = 497.7;
   maxSpeed = 116;
@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private vehicleService: VehicleService){
+    private vehicleService: VehicleService) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -140,9 +140,9 @@ export class DashboardComponent implements OnInit {
     this.loadVehicles();
   }
 
-  public applyFilter(filterValue: string): void {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  // public applyFilter(filterValue: string): void {
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  // }
 
   private loadVehicles(): void {
     this.vehicleService.getVehicles().subscribe(vehicles => {

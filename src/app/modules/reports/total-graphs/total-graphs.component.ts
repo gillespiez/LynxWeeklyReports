@@ -2,24 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { WHITE_ON_BLACK_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
+
+import {EngineHours} from '../models/hour.model';
+import {HourspervehicleService} from '../services/hourspervehicle.service';
 
 @Component({
   selector: 'app-total-graphs',
   templateUrl: './total-graphs.component.html',
   styleUrls: ['./total-graphs.component.css']
 })
-export class TotalGraphsComponent {
+export class TotalGraphsComponent implements OnInit {
 
   title = 'Weekly Report';
-  opened= 'opened'
+  opened = 'opened';
 
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
+
+  data: EngineHours[];
+  // url = 'http://localhost:4000/results';
+  id = [];
+  hours = [];
+  minutes = [];
+
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer){
+    private domSanitizer: DomSanitizer,
+    private hourServices: HourspervehicleService) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -97,29 +107,29 @@ export class TotalGraphsComponent {
     );
   }
 
- 
-  //  per car 
+
+  //  per car
   public perCarOptions = {
     maintainAspectRatio : false,
     scaleShowVerticalLines: false,
     responsive: true,
     title: {
       display: true,
-      text: 'Engine Hours Per Car',
+      text: 'Engine Hours Per Vehicle',
       padding: 10,
     }
   };
-  public perCarLabels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  public perCarLabels = this.id;
   public perCarType = 'line';
   public perCarLegend = false;
   public perCarData = [{
     backgroundColor: 'rgb(194,62,62)',
-    data: [10, 16, 24, 2, 5, 20, 1, 5, 20, 1],
+    data: this.hours,
     label: 'Engine hours',
     fill: false
-    }];
+  }];
 
-  //  speed per day 
+  //  speed per day
   public perTypeOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -133,7 +143,7 @@ export class TotalGraphsComponent {
   public perTypeType = 'pie';
   public perTypeLegend = true;
   public perTypeData = [{
-    backgroundColor: ['rgb(194,62,62)','black'],
+    backgroundColor: ['rgb(194,62,62)', 'black'],
     data: [110, 125],
     fill: false
   }];
@@ -156,4 +166,20 @@ export class TotalGraphsComponent {
     data: [1000, 520, 856, 852, 62, 125, 600],
     label: 'Distance in km'
   }];
+
+  public ngOnInit(): void {
+    this.hourServices.getEngineHours().subscribe((res: EngineHours[]) => {
+    res.forEach(y => {
+      this.id.push(y.id);
+      this.hours.push(y.hours);
+    });
+  },
+
+  // private loadEngineHours(): void {
+  //   this.hourServices.getEngineHours().subscribe(hours => {
+  //   });
+  //   // let vehicleID = hours['list'].map(hours => hours.main.id);
+  // }
+  );
+  }
 }
