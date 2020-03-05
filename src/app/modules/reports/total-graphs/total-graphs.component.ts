@@ -3,12 +3,13 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
-import {EngineHours} from '../models/hour.model';
-import {HourspervehicleService} from '../services/hourspervehicle.service';
+import { AmountPerVehicle } from '../models/pervehicle.model';
 import { PertypegraphService } from '../services/pertypegraph.service';
 import { PerType } from '../models/pertype.model';
 import { PerdaygraphService } from '../services/perdaygraph.service';
 import { PerDay } from '../models/perday.model';
+import { PervehiclegraphService } from '../services/pervehiclegraph.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-total-graphs',
@@ -23,9 +24,9 @@ export class TotalGraphsComponent implements OnInit {
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
 
-  data: EngineHours[];
+  data: AmountPerVehicle[];
   id = [];
-  hours = [];
+  amountPerVehicle = [];
   type = [];
   amount = [];
   day = [];
@@ -35,8 +36,8 @@ export class TotalGraphsComponent implements OnInit {
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private hourServices: HourspervehicleService,
-    private perTypeServices: PertypegraphService,
+    private perVehicleService: PervehiclegraphService,
+    private perTypeService: PertypegraphService,
     private perDayService: PerdaygraphService) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
@@ -132,7 +133,7 @@ export class TotalGraphsComponent implements OnInit {
   public perCarLegend = false;
   public perCarData = [{
     backgroundColor: 'rgb(194,62,62)',
-    data: this.hours,
+    data: this.amountPerVehicle,
     label: 'Engine hours',
     fill: false
   }];
@@ -176,13 +177,13 @@ export class TotalGraphsComponent implements OnInit {
   }];
 
   public ngOnInit(): void {
-    this.hourServices.getEngineHours().subscribe((res: EngineHours[]) => {
+    this.perVehicleService.getAmountPerVehicles().subscribe((res: AmountPerVehicle[]) => {
     res.forEach(y => {
       this.id.push(y.id);
-      this.hours.push(y.hours);
+      this.amountPerVehicle.push(y.amountPerVehicle);
     });
 
-    this.perTypeServices.getAmountPerType().subscribe((res: PerType[]) => {
+    this.perTypeService.getAmountPerType().subscribe((res: PerType[]) => {
       res.forEach(y => {
         this.type.push(y.type);
         this.amount.push(y.amount);
