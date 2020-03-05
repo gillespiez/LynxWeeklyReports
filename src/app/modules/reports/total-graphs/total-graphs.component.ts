@@ -183,19 +183,22 @@ export class TotalGraphsComponent implements OnInit {
       this.amountPerVehicle.push(y.amountPerVehicle);
     });
 
-    this.perTypeService.getAmountPerType().subscribe((res: PerType[]) => {
-      res.forEach(y => {
+    this.perTypeService.getAmountPerType().subscribe((resp: PerType[]) => {
+      resp.forEach(y => {
         this.type.push(y.type);
         this.amount.push(y.amount);
       });
 
-      this.perDayService.getHoursPerDay().subscribe((res: PerDay[]) => {
-        res.forEach(y => {
+      this.perDayService.getHoursPerDay().subscribe((respo: PerDay[]) => {
+        respo.forEach(y => {
           this.day.push(y.day);
           this.amountPerDay.push(y.amountPerDay);
         });
       }
     );
     }
-    )});
-}}
+    );
+    });
+  }
+
+}
