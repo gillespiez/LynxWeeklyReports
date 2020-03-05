@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import {EngineHours} from '../models/hour.model';
 import {HourspervehicleService} from '../services/hourspervehicle.service';
+import { PertypegraphService } from '../services/pertypegraph.service';
+import { PerType } from '../models/pertype.model';
 
 @Component({
   selector: 'app-total-graphs',
@@ -23,13 +25,15 @@ export class TotalGraphsComponent implements OnInit {
   // url = 'http://localhost:4000/results';
   id = [];
   hours = [];
-  minutes = [];
+  type = [];
+  amount = [];
 
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private hourServices: HourspervehicleService) {
+    private hourServices: HourspervehicleService,
+    private perTypeServices: PertypegraphService) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -129,7 +133,7 @@ export class TotalGraphsComponent implements OnInit {
     fill: false
   }];
 
-  //  speed per day
+  // per type
   public perTypeOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -139,12 +143,12 @@ export class TotalGraphsComponent implements OnInit {
       padding: 10,
     }
   };
-  public perTypeLabels = ['Demo', 'Rental'];
+  public perTypeLabels = this.type;
   public perTypeType = 'pie';
   public perTypeLegend = true;
   public perTypeData = [{
     backgroundColor: ['rgb(194,62,62)', 'black'],
-    data: [110, 125],
+    data: this.amount,
     fill: false
   }];
 
@@ -173,6 +177,12 @@ export class TotalGraphsComponent implements OnInit {
       this.id.push(y.id);
       this.hours.push(y.hours);
     });
+
+    this.perTypeServices.getAmountPerType().subscribe((res: PerType[]) => {
+      res.forEach(y => {
+        this.type.push(y.type);
+        this.amount.push(y.amount);
+      });
   },
 
   // private loadEngineHours(): void {
@@ -180,6 +190,7 @@ export class TotalGraphsComponent implements OnInit {
   //   });
   //   // let vehicleID = hours['list'].map(hours => hours.main.id);
   // }
-  );
-  }
+    );
+    }
+    )}
 }
