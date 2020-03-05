@@ -5,27 +5,30 @@ import { ActivatedRoute } from '@angular/router';
 import { ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { VehicleService } from '../services/vehicle.service';
+import { VehicleInfo } from '../models/vehicle.model';
 
-export interface VehicleInformation {
-  vehicleID: string;
-  type: string;
-  l100: number;
-  kml: number;
-  odometer: number;
-}
+// export interface VehicleInformation {
+//   vehicleID: string;
+//   type: string;
+//   l100: number;
+//   kml: number;
+//   odometer: number;
+//   icon: string;
+// }
 
-const ELEMENT_DATA: VehicleInformation[] = [
-  { vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 1.7, kml: 10, odometer: 12000 },
-  { vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 4.6, kml: 8, odometer: 12000 },
-  { vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 6.1, kml: 9, odometer: 12000 },
-  { vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 9.2, kml: 4, odometer: 12000 },
-  { vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 10.1, kml: 1, odometer: 12000 },
-  { vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 12.7, kml: 1, odometer: 12000 },
-  { vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 14.7, kml: 5, odometer: 12000 },
-  { vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 15.4, kml: 8, odometer: 12000 },
-  { vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 18.9, kml: 5, odometer: 12000 },
-  { vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 20.1, kml: 9, odometer: 12000 },
-];
+// const ELEMENT_DATA: VehicleInformation[] = [
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 1.7, kml: 10, odometer: 12000, icon:  'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 4.6, kml: 8, odometer: 12000, icon:  'keyboard_arrow_right'},
+//   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 6.1, kml: 9,odometer: 12000, icon:  'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 9.2, kml: 4, odometer: 12000, icon:  'keyboard_arrow_right'},
+//   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 10.1, kml: 1, odometer: 12000, icon:  'keyboard_arrow_right'},
+//   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 12.7, kml: 1, odometer: 12000, icon:  'keyboard_arrow_right'},
+//   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 14.7, kml: 5, odometer: 12000, icon:  'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 15.4, kml:8, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'REN-0238 (FYH887FS)', type: 'Rental', l100: 18.9, kml: 5, odometer: 12000, icon:  'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 20.1, kml: 9, odometer: 12000, icon: 'keyboard_arrow_right'},
+// ];
 
 @Component({
   selector: 'app-root',
@@ -33,12 +36,16 @@ const ELEMENT_DATA: VehicleInformation[] = [
   styleUrls: ['./dashboard.component.css']
 })
 
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent implements OnInit {
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   title = 'LynxWeeklyReports';
   opened = 'opened';
-  displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['id', 'type', 'l100', 'kml', 'odometer', 'actions'];
+  dataSource: MatTableDataSource<VehicleInfo> = new MatTableDataSource();
+
+  maxDate = new Date();
+  minDate = new Date(2017, 1, 1);
 
   // cards data
   totalDistance = 497.7;
@@ -47,23 +54,11 @@ export class DashboardComponent implements AfterViewInit {
   totalHours = 10;
   totalMinutes = 40;
 
-  maxDate = new Date();
-  minDate = new Date(2017, 1, 1);
-
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-  }
-
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer) {
+    private domSanitizer: DomSanitizer,
+    private vehicleService: VehicleService) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -140,4 +135,20 @@ export class DashboardComponent implements AfterViewInit {
       )
     );
   }
+
+  public ngOnInit(): void {
+    this.loadVehicles();
+  }
+
+  // public applyFilter(filterValue: string): void {
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  // }
+
+  private loadVehicles(): void {
+    this.vehicleService.getVehicles().subscribe(vehicles => {
+      this.dataSource.data = vehicles;
+      this.dataSource.sort = this.sort;
+    });
+  }
+
 }

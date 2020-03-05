@@ -82,3 +82,7 @@ mat-card, #filters {
     background-color: transparent;
     vertical-align: top;
 }
+.mat-table .mat-column-actions {
+    max-width: 40px;
+    padding-right: 1rem;
+}

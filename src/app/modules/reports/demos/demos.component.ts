@@ -2,39 +2,48 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { MatSort } from '@angular/material/sort';
+import { ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { VehicleService } from '../services/vehicle.service';
+import { VehicleInfo } from '../models/vehicle.model';
 
-export interface VehicleInformation {
-  vehicleID: string;
-  type: string;
-  l100: number;
-  kml: number;
-  odometer: number;
-}
+// export interface VehicleInformation {
+//   vehicleID: string;
+//   type: string;
+//   l100: number;
+//   kml: number;
+//   odometer: number;
+//   icon: string;
+// }
 
-const ELEMENT_DATA: VehicleInformation[] = [
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 1.7, kml: 10, odometer: 12000},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 4.6, kml: 8, odometer: 12000},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 6.1, kml: 9, odometer: 1200},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 9.2, kml: 4, odometer: 12000},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 10.1, kml: 1, odometer: 12000},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 12.7, kml: 1, odometer: 12000},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 14.7, kml: 5, odometer: 12000},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 15.4, kml: 8, odometer: 12000},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 18.9, kml: 5, odometer: 12000},
-  {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 20.1, kml: 9, odometer: 12000},
-];
+// const ELEMENT_DATA: VehicleInformation[] = [
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 1.7, kml: 10, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 4.6, kml: 8, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 6.1, kml: 9,odometer: 1200, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 9.2, kml: 4, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 10.1, kml: 1, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 12.7, kml: 1, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 14.7, kml: 5, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 15.4, kml:8, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 18.9, kml: 5, odometer: 12000, icon: 'keyboard_arrow_right'},
+//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 20.1, kml: 9, odometer: 12000, icon: 'keyboard_arrow_right'},
+// ];
 
 @Component({
   selector: 'app-demos',
   templateUrl: './demos.component.html',
   styleUrls: ['./demos.component.css']
 })
-export class DemosComponent {
+export class DemosComponent implements OnInit {
+
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   title = 'Weekly Report';
   opened = 'opened';
-  displayedColumns: string[] = ['vehicleID', 'type', 'l100', 'kml', 'odometer', 'icon'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['id', 'type', 'l100', 'kml', 'odometer', 'actions'];
+  dataSource: MatTableDataSource<VehicleInfo> = new MatTableDataSource();
+
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
 
@@ -48,7 +57,8 @@ export class DemosComponent {
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer) {
+    private domSanitizer: DomSanitizer,
+    private vehicleService: VehicleService ) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -125,4 +135,16 @@ export class DemosComponent {
       )
     );
   }
+
+  public ngOnInit(): void {
+    this.loadVehicles();
+  }
+
+  private loadVehicles(): void {
+    this.vehicleService.getVehicles().subscribe(vehicles => {
+      this.dataSource.data = vehicles;
+      this.dataSource.sort = this.sort;
+    });
+  }
+
 }

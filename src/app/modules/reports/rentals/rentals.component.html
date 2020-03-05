@@ -43,9 +43,9 @@
 <h1>All Rental Vehicles</h1>
 <mat-table [dataSource]='dataSource' class='mat-elevation-z8'>
   <!-- ID -->
-  <ng-container matColumnDef='vehicleID'>
+  <ng-container matColumnDef='id'>
     <mat-header-cell *matHeaderCellDef> Vehicle ID </mat-header-cell>
-    <mat-cell *matCellDef='let element'> {{element.vehicleID}} </mat-cell>
+    <mat-cell *matCellDef='let element'> {{element.id}} </mat-cell>
   </ng-container>
  
   <!-- type -->
@@ -73,9 +73,11 @@
   </ng-container>
 
   <!-- Icon  -->
-  <ng-container matColumnDef='icon'>
+  <ng-container matColumnDef='actions'>
     <mat-header-cell *matHeaderCellDef></mat-header-cell>
-    <mat-cell *matCellDef='let element'><button mat-icon-button><mat-icon>keyboard_arrow_right</mat-icon></button></mat-cell>
+    <mat-cell *matCellDef='let element'>
+      <button mat-icon-button><mat-icon>keyboard_arrow_right</mat-icon></button>
+    </mat-cell>
   </ng-container>
  
   <mat-header-row *matHeaderRowDef='displayedColumns'></mat-header-row>

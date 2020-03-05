@@ -2,24 +2,43 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { WHITE_ON_BLACK_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
+
+import { AmountPerVehicle } from '../models/pervehicle.model';
+import { PertypegraphService } from '../services/pertypegraph.service';
+import { PerType } from '../models/pertype.model';
+import { PerdaygraphService } from '../services/perdaygraph.service';
+import { PerDay } from '../models/perday.model';
+import { PervehiclegraphService } from '../services/pervehiclegraph.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-total-graphs',
   templateUrl: './total-graphs.component.html',
   styleUrls: ['./total-graphs.component.css']
 })
-export class TotalGraphsComponent {
+export class TotalGraphsComponent implements OnInit {
 
   title = 'Weekly Report';
   opened = 'opened';
 
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
+
+  data: AmountPerVehicle[];
+  id = [];
+  amountPerVehicle = [];
+  type = [];
+  amount = [];
+  day = [];
+  amountPerDay = [];
+
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer) {
+    private domSanitizer: DomSanitizer,
+    private perVehicleService: PervehiclegraphService,
+    private perTypeService: PertypegraphService,
+    private perDayService: PerdaygraphService) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -105,21 +124,21 @@ export class TotalGraphsComponent {
     responsive: true,
     title: {
       display: true,
-      text: 'Engine Hours Per Car',
+      text: 'Engine Hours Per Vehicle',
       padding: 10,
     }
   };
-  public perCarLabels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  public perCarLabels = this.id;
   public perCarType = 'line';
   public perCarLegend = false;
   public perCarData = [{
     backgroundColor: 'rgb(194,62,62)',
-    data: [10, 16, 24, 2, 5, 20, 1, 5, 20, 1],
+    data: this.amountPerVehicle,
     label: 'Engine hours',
     fill: false
-    }];
+  }];
 
-  //  speed per day
+  // per type
   public perTypeOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -129,12 +148,12 @@ export class TotalGraphsComponent {
       padding: 10,
     }
   };
-  public perTypeLabels = ['Demo', 'Rental'];
+  public perTypeLabels = this.type;
   public perTypeType = 'pie';
   public perTypeLegend = true;
   public perTypeData = [{
     backgroundColor: ['rgb(194,62,62)', 'black'],
-    data: [110, 125],
+    data: this.amount,
     fill: false
   }];
 
@@ -148,12 +167,38 @@ export class TotalGraphsComponent {
       padding: 10,
     }
   };
-  public perDayLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
+  public perDayLabels = this.day;
   public perDayType = 'bar';
   public perDayLegend = false;
   public perDayData = [{
     backgroundColor: 'rgb(194,62,62)',
-    data: [1000, 520, 856, 852, 62, 125, 600],
+    data: this.amountPerDay,
     label: 'Distance in km'
   }];
+
+  public ngOnInit(): void {
+    this.perVehicleService.getAmountPerVehicles().subscribe((res: AmountPerVehicle[]) => {
+    res.forEach(y => {
+      this.id.push(y.id);
+      this.amountPerVehicle.push(y.amountPerVehicle);
+    });
+
+    this.perTypeService.getAmountPerType().subscribe((resp: PerType[]) => {
+      resp.forEach(y => {
+        this.type.push(y.type);
+        this.amount.push(y.amount);
+      });
+
+      this.perDayService.getHoursPerDay().subscribe((respo: PerDay[]) => {
+        respo.forEach(y => {
+          this.day.push(y.day);
+          this.amountPerDay.push(y.amountPerDay);
+        });
+      }
+    );
+    }
+    );
+    });
+  }
+
 }
