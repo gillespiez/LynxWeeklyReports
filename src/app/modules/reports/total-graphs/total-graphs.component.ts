@@ -7,6 +7,8 @@ import {EngineHours} from '../models/hour.model';
 import {HourspervehicleService} from '../services/hourspervehicle.service';
 import { PertypegraphService } from '../services/pertypegraph.service';
 import { PerType } from '../models/pertype.model';
+import { PerdaygraphService } from '../services/perdaygraph.service';
+import { PerDay } from '../models/perday.model';
 
 @Component({
   selector: 'app-total-graphs',
@@ -22,18 +24,20 @@ export class TotalGraphsComponent implements OnInit {
   minDate = new Date(2017, 1, 1);
 
   data: EngineHours[];
-  // url = 'http://localhost:4000/results';
   id = [];
   hours = [];
   type = [];
   amount = [];
+  day = [];
+  amountPerDay = [];
 
   constructor(
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private hourServices: HourspervehicleService,
-    private perTypeServices: PertypegraphService) {
+    private perTypeServices: PertypegraphService,
+    private perDayService: PerdaygraphService) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -162,12 +166,12 @@ export class TotalGraphsComponent implements OnInit {
       padding: 10,
     }
   };
-  public perDayLabels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satuday', 'Sunday'];
+  public perDayLabels = this.day;
   public perDayType = 'bar';
   public perDayLegend = false;
   public perDayData = [{
     backgroundColor: 'rgb(194,62,62)',
-    data: [1000, 520, 856, 852, 62, 125, 600],
+    data: this.amountPerDay,
     label: 'Distance in km'
   }];
 
@@ -183,14 +187,14 @@ export class TotalGraphsComponent implements OnInit {
         this.type.push(y.type);
         this.amount.push(y.amount);
       });
-  },
 
-  // private loadEngineHours(): void {
-  //   this.hourServices.getEngineHours().subscribe(hours => {
-  //   });
-  //   // let vehicleID = hours['list'].map(hours => hours.main.id);
-  // }
+      this.perDayService.getHoursPerDay().subscribe((res: PerDay[]) => {
+        res.forEach(y => {
+          this.day.push(y.day);
+          this.amountPerDay.push(y.amountPerDay);
+        });
+      }
     );
     }
-    )}
-}
+    )});
+}}
