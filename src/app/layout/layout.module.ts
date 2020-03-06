@@ -4,6 +4,7 @@ import { MaterialModule } from '../material/material.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     MaterialModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   exports: [
     ToolbarComponent

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { DashboardComponent } from './reports/dashboard/dashboard.component';
 import { DemosComponent } from './reports/demos/demos.component';
 import { RentalsComponent } from './reports/rentals/rentals.component';
 import { PerVehicleComponent } from './reports/per-vehicle/per-vehicle.component';
 import { TotalGraphsComponent } from './reports/total-graphs/total-graphs.component';
+
 import { MaterialModule } from '../material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';

@@ -8,28 +8,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { VehicleService } from '../services/vehicle.service';
 import { VehicleInfo } from '../models/vehicle.model';
 
-// export interface VehicleInformation {
-//   vehicleID: string;
-//   type: string;
-//   l100: number;
-//   kml: number;
-//   odometer: number;
-//   icon: string;
-// }
-
-// const ELEMENT_DATA: VehicleInformation[] = [
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 1.7, kml: 10, odometer: 12000, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 4.6, kml: 8, odometer: 12000, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 6.1, kml: 9,odometer: 1200, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 9.2, kml: 4, odometer: 12000, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 10.1, kml: 1, odometer: 12000, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 12.7, kml: 1, odometer: 12000, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 14.7, kml: 5, odometer: 12000, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 15.4, kml:8, odometer: 12000, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 18.9, kml: 5, odometer: 12000, icon: 'keyboard_arrow_right'},
-//   {vehicleID: 'DEM-0572 (FC57HBGP)', type: 'Demo', l100: 20.1, kml: 9, odometer: 12000, icon: 'keyboard_arrow_right'},
-// ];
-
 @Component({
   selector: 'app-demos',
   templateUrl: './demos.component.html',

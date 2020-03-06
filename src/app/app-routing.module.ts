@@ -7,43 +7,20 @@ import { DemosComponent } from './modules/reports/demos/demos.component';
 import { PerVehicleComponent } from './modules/reports/per-vehicle/per-vehicle.component';
 import { TotalGraphsComponent } from './modules/reports/total-graphs/total-graphs.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
+// import { LayoutRoutingModule } from './layout/layout-routing.module';
+// import {ModulesRoutingModule} from './modules/modules-routing.module';
 
 const appRoutes: Routes = [
-  {path: 'dashboard', component: ToolbarComponent,
+  {path: '',  component: ToolbarComponent,
     children: [
-      {path: '', component: DashboardComponent}
+      {path: 'dashboard', component: DashboardComponent},
+      {path: '', component: DashboardComponent},
+      {path: 'rentals', component: RentalsComponent},
+      {path: 'demos', component: DemosComponent},
+      {path: 'percar', component: PerVehicleComponent},
+      {path: 'totals', component: TotalGraphsComponent}
     ]
-  },
-
-  {path: '', component: ToolbarComponent,
-    children: [
-      {path: '', component: DashboardComponent}
-    ]
-  },
-
-  {path: 'rentals', component: ToolbarComponent,
-    children: [
-      {path: '', component: RentalsComponent}
-    ]
-  },
-
-  {path: 'demos', component: ToolbarComponent,
-    children: [
-      {path: '', component: DemosComponent}
-    ]
-  },
-
-  {path: 'percar', component: ToolbarComponent,
-    children: [
-      {path: '', component: PerVehicleComponent}
-    ]
-  },
-
-  {path: 'totals', component: ToolbarComponent,
-    children: [
-      {path: '', component: TotalGraphsComponent}
-    ]
-  },
+  }
 ];
 
 @NgModule({

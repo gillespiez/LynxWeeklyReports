@@ -15,6 +15,9 @@ import { ChartsModule } from 'ng2-charts';
 
 import {ModulesModule} from './modules/modules.module';
 import {LayoutModule} from './layout/layout.module';
+import { ModulesRoutingModule } from './modules/modules-routing.module';
+import {LayoutRoutingModule} from './layout/layout-routing.module';
+
 
 @NgModule({
   imports: [
@@ -29,7 +32,9 @@ import {LayoutModule} from './layout/layout.module';
     MatIconModule,
     HttpClientModule,
     RouterModule,
-    ChartsModule
+    ChartsModule,
+    LayoutRoutingModule,
+    ModulesRoutingModule
   ],
   providers: [],
   declarations: [

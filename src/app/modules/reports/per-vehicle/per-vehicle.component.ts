@@ -186,7 +186,7 @@ export class PerVehicleComponent implements OnInit {
         this.engineHoursPerCar.push(y.engineHours);
         this.maxSpeedPerCar.push(y.maxSpeed);
         this.distancePercar.push(y.distance);
-      })
-    })
+      });
+    });
   }
 }
