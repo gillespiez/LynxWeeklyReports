@@ -4,12 +4,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { AmountPerVehicle } from '../models/pervehicle.model';
-import { PertypegraphService } from '../services/pertypegraph.service';
 import { PerType } from '../models/pertype.model';
-import { PerdaygraphService } from '../services/perdaygraph.service';
 import { PerDay } from '../models/perday.model';
-import { PervehiclegraphService } from '../services/pervehiclegraph.service';
-import { from } from 'rxjs';
+import {TotalgraphscompService} from '../services/totalgraphscomp.service';
 
 @Component({
   selector: 'app-total-graphs',
@@ -36,9 +33,7 @@ export class TotalGraphsComponent implements OnInit {
     private route: ActivatedRoute,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private perVehicleService: PervehiclegraphService,
-    private perTypeService: PertypegraphService,
-    private perDayService: PerdaygraphService) {
+    private totalGraphsService: TotalgraphscompService) {
     this.matIconRegistry.addSvgIcon(
       `distance`,
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/distance.svg',
@@ -177,19 +172,19 @@ export class TotalGraphsComponent implements OnInit {
   }];
 
   public ngOnInit(): void {
-    this.perVehicleService.getAmountPerVehicles().subscribe((res: AmountPerVehicle[]) => {
+    this.totalGraphsService.getTotalAmountPerVehicle().subscribe((res: AmountPerVehicle[]) => {
     res.forEach(y => {
       this.id.push(y.id);
       this.amountPerVehicle.push(y.amountPerVehicle);
     });
 
-    this.perTypeService.getAmountPerType().subscribe((resp: PerType[]) => {
+    this.totalGraphsService.getTotalAmountPerType().subscribe((resp: PerType[]) => {
       resp.forEach(y => {
         this.type.push(y.type);
         this.amount.push(y.amount);
       });
 
-      this.perDayService.getHoursPerDay().subscribe((respo: PerDay[]) => {
+      this.totalGraphsService.getTotalAmountPerDay().subscribe((respo: PerDay[]) => {
         respo.forEach(y => {
           this.day.push(y.day);
           this.amountPerDay.push(y.amountPerDay);
