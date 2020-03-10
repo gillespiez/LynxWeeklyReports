@@ -3,9 +3,9 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
-import { AmountPerVehicle } from '../models/pervehicle.model';
-import { PerType } from '../models/pertype.model';
-import { PerDay } from '../models/perday.model';
+import { PerVehicleInfo } from '../models/totalgraphscomp.model';
+import { PerTypeInfo } from '../models/totalgraphscomp.model';
+import { PerDayInfo } from '../models/totalgraphscomp.model';
 import {TotalgraphscompService} from '../services/totalgraphscomp.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class TotalGraphsComponent implements OnInit {
   maxDate = new Date();
   minDate = new Date(2017, 1, 1);
 
-  data: AmountPerVehicle[];
+  data: PerVehicleInfo[];
   id = [];
   amountPerVehicle = [];
   type = [];
@@ -172,19 +172,19 @@ export class TotalGraphsComponent implements OnInit {
   }];
 
   public ngOnInit(): void {
-    this.totalGraphsService.getTotalAmountPerVehicle().subscribe((res: AmountPerVehicle[]) => {
+    this.totalGraphsService.getTotalAmountPerVehicle().subscribe((res: PerVehicleInfo[]) => {
     res.forEach(y => {
       this.id.push(y.id);
       this.amountPerVehicle.push(y.amountPerVehicle);
     });
 
-    this.totalGraphsService.getTotalAmountPerType().subscribe((resp: PerType[]) => {
+    this.totalGraphsService.getTotalAmountPerType().subscribe((resp: PerTypeInfo[]) => {
       resp.forEach(y => {
         this.type.push(y.type);
         this.amount.push(y.amount);
       });
 
-      this.totalGraphsService.getTotalAmountPerDay().subscribe((respo: PerDay[]) => {
+      this.totalGraphsService.getTotalAmountPerDay().subscribe((respo: PerDayInfo[]) => {
         respo.forEach(y => {
           this.day.push(y.day);
           this.amountPerDay.push(y.amountPerDay);

@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { VehicleService } from '../services/vehicle.service';
 import { VehicleInfo } from '../models/vehicle.model';
 
+
 @Component({
   selector: 'app-demos',
   templateUrl: './demos.component.html',
@@ -119,9 +120,10 @@ export class DemosComponent implements OnInit {
   }
 
   private loadVehicles(): void {
+
     this.vehicleService.getVehicles().subscribe(vehicles => {
-      this.dataSource.data = vehicles;
-      this.dataSource.sort = this.sort;
+        this.dataSource.data = vehicles;
+        this.dataSource.sort = this.sort;
     });
   }
 
