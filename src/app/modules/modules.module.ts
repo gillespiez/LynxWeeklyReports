@@ -16,9 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ChartsModule } from 'ng2-charts';
 
-
-
-
 @NgModule({
   declarations: [
     DashboardComponent,
