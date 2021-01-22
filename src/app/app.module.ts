@@ -17,6 +17,7 @@ import {ModulesModule} from './modules/modules.module';
 import {LayoutModule} from './layout/layout.module';
 import { ModulesRoutingModule } from './modules/modules-routing.module';
 import {LayoutRoutingModule} from './layout/layout-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {LayoutRoutingModule} from './layout/layout-routing.module';
     RouterModule,
     ChartsModule,
     LayoutRoutingModule,
-    ModulesRoutingModule
+    ModulesRoutingModule,
+    FlexLayoutModule
   ],
   providers: [],
   declarations: [
